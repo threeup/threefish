@@ -1,0 +1,13 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.meta"
+			],
+			"path": "Assets"
+		}
+	],
+	"solution_file": "./ThreeFish.sln"
+}

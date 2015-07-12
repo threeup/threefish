@@ -1,0 +1,2208 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"for",
+				"forwardAngle	float"
+			],
+			[
+				"offse",
+				"offsetAngle	float"
+			],
+			[
+				"forw",
+				"forwardAngle	float"
+			],
+			[
+				"at",
+				"attached	List<Actor>"
+			],
+			[
+				"Ro",
+				"Rotate(Vector3 axis, float angle)	void"
+			],
+			[
+				"ret",
+				"retargetTimer	BasicTimer"
+			],
+			[
+				"tar",
+				"targetPosition	Vector3"
+			],
+			[
+				"ta",
+				"targetTransform	Transform"
+			],
+			[
+				"Is",
+				"isAlive	bool"
+			],
+			[
+				"acto",
+				"actorTypeName	string"
+			],
+			[
+				"primar",
+				"primaryActorType	ActorType"
+			],
+			[
+				"Game",
+				"GameObject	GameObject"
+			],
+			[
+				"atta",
+				"AttachedInput(float deltaTime, float horizontalAxis, float verticalAxis, bool btnA, bool btnX)	void"
+			],
+			[
+				"other",
+				"otherBody	ActorBody"
+			],
+			[
+				"Boat",
+				"BoatCameraControl	BoatCameraControl"
+			],
+			[
+				"rec",
+				"RecomputeForward()	void"
+			],
+			[
+				"thro",
+				"throttleAmount	float"
+			],
+			[
+				"C",
+				"IsComplete()	bool"
+			],
+			[
+				"Rec",
+				"RecomputeForward()	void"
+			],
+			[
+				"des",
+				"desiredSpeed	float"
+			],
+			[
+				"ac",
+				"activeSelf	bool { get; }"
+			],
+			[
+				"t",
+				"transform	Transform { get; }"
+			],
+			[
+				"Vec",
+				"Vector3	Vector3"
+			],
+			[
+				"hasB",
+				"hasButtonX	bool"
+			],
+			[
+				"GL_T",
+				"GL_TEXTURE_2D"
+			],
+			[
+				"glBi",
+				"glBindTexture"
+			],
+			[
+				"dr",
+				"drawable"
+			],
+			[
+				"draw",
+				"drawables"
+			],
+			[
+				"tex",
+				"textureName"
+			],
+			[
+				"GLEW",
+				"GLEW_OK"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"ma",
+				"margin-left"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"back",
+				"background-size"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"Throw",
+				"ThrowPhase"
+			],
+			[
+				"FLYI",
+				"FLYINGOFF"
+			],
+			[
+				"Phy",
+				"PhysicsState"
+			],
+			[
+				"Ph",
+				"PhysicsState"
+			],
+			[
+				"s",
+				"skeleton"
+			],
+			[
+				"orig",
+				"originalScale"
+			],
+			[
+				"aimC",
+				"aimChildren"
+			],
+			[
+				"livin",
+				"livingActors"
+			],
+			[
+				"living",
+				"livingItems"
+			],
+			[
+				"game",
+				"GameObject"
+			],
+			[
+				"state",
+				"stateLock"
+			],
+			[
+				"nex",
+				"nextParent"
+			],
+			[
+				"next",
+				"nextParent"
+			],
+			[
+				"th",
+				"throwTimer"
+			],
+			[
+				"Ga",
+				"GameObject"
+			],
+			[
+				"reg",
+				"regrowTimer"
+			],
+			[
+				"Act",
+				"ActorTeam"
+			],
+			[
+				"body",
+				"bodyParts"
+			],
+			[
+				"spawn",
+				"spawnType"
+			],
+			[
+				"best",
+				"bestDistSq"
+			],
+			[
+				"Tar",
+				"TargetNearest"
+			],
+			[
+				"delta",
+				"deltaTime"
+			],
+			[
+				"shoul",
+				"shouldThrow"
+			],
+			[
+				"legL",
+				"legLowerLeft"
+			],
+			[
+				"CanT",
+				"CanThrowStart"
+			],
+			[
+				"throw",
+				"thrower"
+			],
+			[
+				"wea",
+				"weapon"
+			],
+			[
+				"thr",
+				"thrower"
+			],
+			[
+				"this",
+				"thisRigidbody"
+			],
+			[
+				"cha",
+				"characterMask"
+			],
+			[
+				"Glu",
+				"GlueState"
+			],
+			[
+				"glue",
+				"glueState"
+			],
+			[
+				"glu",
+				"glueState"
+			],
+			[
+				"spee",
+				"speedUp"
+			],
+			[
+				"debr",
+				"debrisPart"
+			],
+			[
+				"fa",
+				"failedState"
+			],
+			[
+				"Leg",
+				"LegRightUpper"
+			],
+			[
+				"weapon",
+				"weaponType"
+			],
+			[
+				"pare",
+				"parentPart"
+			],
+			[
+				"weapn",
+				"weaponType"
+			],
+			[
+				"switch",
+				"switchThrowerType"
+			],
+			[
+				"swi",
+				"switchThrower"
+			],
+			[
+				"thor",
+				"thrower"
+			],
+			[
+				"tho",
+				"throwerPart"
+			],
+			[
+				"we",
+				"weaponPartIdx"
+			],
+			[
+				"Thro",
+				"ThrowPhase"
+			],
+			[
+				"Thor",
+				"ThrowPhase"
+			],
+			[
+				"ori",
+				"originalScale"
+			],
+			[
+				"canW",
+				"canWalkNormal"
+			],
+			[
+				"local",
+				"localScale"
+			],
+			[
+				"Actor",
+				"ActorBodyPart"
+			],
+			[
+				"Body",
+				"BodyPartType"
+			],
+			[
+				"ve",
+				"Vector3"
+			],
+			[
+				"desired",
+				"desiredPosition"
+			],
+			[
+				"desi",
+				"desiredPosition"
+			],
+			[
+				"de",
+				"desiredPosition"
+			],
+			[
+				"sp",
+				"spawnedObj"
+			],
+			[
+				"dista",
+				"distanceToObstacle"
+			],
+			[
+				"U",
+				"UnityEngine"
+			],
+			[
+				"d",
+				"desiredRotation"
+			],
+			[
+				"en",
+				"energyTimer"
+			],
+			[
+				"axi",
+				"axisX"
+			],
+			[
+				"ax",
+				"axisY"
+			],
+			[
+				"v",
+				"Vector2"
+			],
+			[
+				"Acot",
+				"ActorMotor"
+			],
+			[
+				"chil",
+				"childActor"
+			],
+			[
+				"targe",
+				"targetActor"
+			],
+			[
+				"target",
+				"targetVehicle"
+			],
+			[
+				"oth",
+				"otherEntity"
+			],
+			[
+				"att",
+				"attachedChildren"
+			],
+			[
+				"D",
+				"DestroySelf"
+			],
+			[
+				"abil",
+				"abilities"
+			],
+			[
+				"regen",
+				"Regen"
+			],
+			[
+				"Gumo",
+				"GumboAgent"
+			],
+			[
+				"cu",
+				"currentEvalTask"
+			],
+			[
+				"Gu",
+				"GumboInstruction"
+			],
+			[
+				"curre",
+				"currentTasks"
+			],
+			[
+				"l",
+				"lastActors"
+			],
+			[
+				"eff",
+				"effectType"
+			],
+			[
+				"ef",
+				"effectType"
+			],
+			[
+				"Ef",
+				"EffectType"
+			],
+			[
+				"st",
+				"startPos"
+			],
+			[
+				"active",
+				"activeWeapons"
+			],
+			[
+				"us",
+				"userBoat"
+			],
+			[
+				"act",
+				"activeWeapons"
+			],
+			[
+				"a",
+				"activeWeapon"
+			],
+			[
+				"Creat",
+				"CreateDrift"
+			],
+			[
+				"ot",
+				"otherWeapon"
+			],
+			[
+				"pr",
+				"progressRemaining"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Assets/Code/Actors/Actor.cs",
+			"settings":
+			{
+				"buffer_size": 3698,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Code/Actors/Food.cs",
+			"settings":
+			{
+				"buffer_size": 1425,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Code/Actors/ActorMotor.cs",
+			"settings":
+			{
+				"buffer_size": 6879,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 429 files for \"attachedinp\"\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Actor.cs:\n   77  			if( IsAttached )\n   78  			{\n   79: 				AttachedInput(deltaTime, horizontalAxis, verticalAxis, btnA, btnX);\n   80  			}\n   81  			else\n   ..\n   89  \n   90  		}\n   91: 		public virtual void AttachedInput(float deltaTime, float horizontalAxis, float verticalAxis, bool btnA, bool btnX)\n   92  		{\n   93  \n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Boat.cs:\n   22  \n   23  \n   24: 		public override void AttachedInput(float deltaTime, float horizontalAxis, float verticalAxis, bool btnA, bool btnX)\n   25  		{\n   26  \n\n3 matches across 2 files\n\n\nSearching 430 files for \"HandleTrigger\"\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Actor.cs:\n   95  		}\n   96  \n   97: 		public virtual void HandleTrigger(Actor other, Vector3 offset)\n   98  		{\n   99  			if( other == null || !Utils.CanInteract(this, other))\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\ActorMouth.cs:\n   33              float forwardAngle = Mathf.Atan2(forward.y, forward.z);\n   34          	Actor otherActor = otherBody != null ? otherBody.actor : null;\n   35:         	actor.HandleTrigger(otherActor, offsetAngle - forwardAngle);\n   36          }\n   37      }\n\n2 matches across 2 files\n\n\nSearching 430 files for \"attached.add\"\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Actor.cs:\n  122  				return;\n  123  			}\n  124: 			attached.Add(other);\n  125  			other.attachParent = this;\n  126  			other.attachOffset = offset;\n\n1 match in 1 file\n\n\nSearching 430 files for \"eatenTimer\"\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Actor.cs:\n   35  		public float attachOffset = 0f;\n   36  \n   37: 		public BasicTimer eatenTimer = new BasicTimer(0f);\n   38  \n   39  		public Vector3 Forward { get { return motor.MotorForward; } }\n   ..\n   46  		{\n   47  			Detach();\n   48: 			eatenTimer = new BasicTimer(0f);\n   49  			lifeTime = 0f;\n   50  			health = maxHealth;\n   ..\n   71  \n   72  \n   73: 			if( eatenTimer.Tick(deltaTime) )\n   74  			{\n   75  				health--;\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Fish.cs:\n   96  		{\n   97  \n   98: 			other.eatenTimer.Duration = eatSpeed;\n   99: 			other.eatenTimer.Reset();\n  100  			base.Attach(other, offset);\n  101  		}\n\nI:\\w\\ThreeFish\\Assets\\Prefabs\\ProtoBoat.prefab:\n    <binary>\n\nI:\\w\\ThreeFish\\Assets\\Prefabs\\ProtoFishLarge.prefab:\n    <binary>\n\nI:\\w\\ThreeFish\\Assets\\Prefabs\\ProtoFishMedium.prefab:\n    <binary>\n\nI:\\w\\ThreeFish\\Assets\\Prefabs\\ProtoFishSmall.prefab:\n    <binary>\n\nI:\\w\\ThreeFish\\Assets\\Prefabs\\ProtoFood.prefab:\n    <binary>\n\nI:\\w\\ThreeFish\\Assets\\Prefabs\\ProtoHook.prefab:\n    <binary>\n\n11 matches across 8 files\n",
+			"settings":
+			{
+				"buffer_size": 2575,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "Assets/Code/Actors/Boat.cs",
+			"settings":
+			{
+				"buffer_size": 1558,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Code/User.cs",
+			"settings":
+			{
+				"buffer_size": 2443,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Assets/Code/SpawnBoss.cs",
+			"settings":
+			{
+				"buffer_size": 2649,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/CodeLib/BasicCommon/BasicTimer.cs",
+			"settings":
+			{
+				"buffer_size": 1938,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Code/Actors/Hook.cs",
+			"settings":
+			{
+				"buffer_size": 129,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Code/Actors/ActorMouth.cs",
+			"settings":
+			{
+				"buffer_size": 1429,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Code/Actors/ActorBody.cs",
+			"settings":
+			{
+				"buffer_size": 1003,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Code/Actors/Fish.cs",
+			"settings":
+			{
+				"buffer_size": 2360,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/I/w/ThreeFish/Assets",
+		"/I/w/ThreeFish/Assets/Code",
+		"/I/w/ThreeFish/Assets/Code/Actors",
+		"/I/w/ThreeFish/Assets/Code/Brains"
+	],
+	"file_history":
+	[
+		"/I/w/ThreeFish/Assets/Code/UserManager.cs",
+		"/I/w/ThreeFish/Assets/Code/Actors/ActorMotor.cs",
+		"/I/w/ThreeFish/Assets/Code/World.cs",
+		"/I/w/ThreeFish/Assets/Code/Actors/Fish.cs",
+		"/I/w/ThreeFish/Assets/Code/Actors/Food.cs",
+		"/I/w/ThreeFish/Assets/Code/Actors/Boat.cs",
+		"/I/w/ThreeFish/Assets/Code/BoatCameraControl.cs",
+		"/I/w/ThreeFish/Assets/Code/Utils.cs",
+		"/I/w/ThreeFish/Assets/Code/Brains/Brain.cs",
+		"/I/w/ThreeFish/Assets/Code/Actors/Hook.cs",
+		"/I/w/ThreeFish/Assets/Code/Actors/ActorBody.cs",
+		"/I/w/ThreeFish/Assets/Code/InputBoss.cs",
+		"/I/w/ThreeFish/Assets/Code/Actors/FoodModifier.cs",
+		"/I/w/ThreeFish/Assets/Code/Actors/Actor.cs",
+		"/I/w/ThreeFish/Assets/Code/Brains/AIManager.cs",
+		"/I/w/ThreeFish/Assets/CodeLib/BasicCommon/BasicTimer.cs",
+		"/I/w/ThreeFish/Assets/Code/Brains/BrainRecord.cs",
+		"/I/w/ThreeFish/Assets/Code/User.cs",
+		"/I/w/ThreeFish/Assets/Scenes/game.unity",
+		"/I/w/ThreeFish/Assets/Code/SpawnBoss.cs",
+		"/I/w/ThreeFish/Assets/Code/ChaseCameraControl.cs",
+		"/I/w/ThreeFish/Assets/Code/FishCameraControl.cs",
+		"/I/w/ThreeFish/Assets/Code/GameControls.cs",
+		"/C/Users/3up_000/Downloads/UnityEvents.cs",
+		"/I/w/BKUP/GoodFishOld/GumboAI/GumboTask_Action.cs",
+		"/I/w/BKUP/GoodFishOld/GumboAI/GumboAgentRecord.cs",
+		"/I/w/BKUP/GoodFishOld/GumboAI/GumboCore/GumboSense.cs",
+		"/I/w/BKUP/GoodFishOld/GumboAI/GumboCore/GumboAction.cs",
+		"/I/w/ThreeFish/Assets/Code/Actors/HookMotor.cs",
+		"/I/w/BKUP/GoodFish/Assets/Code/Actors/ActorMotor.cs",
+		"/I/w/BKUP/GoodFish/Assets/Code/Actors/ActorBody.cs",
+		"/I/w/BKUP/GoodFish/Assets/Code/Brains/Brain.cs",
+		"/I/w/BKUP/GoodFish/goodfish.sublime-project",
+		"/I/w/ThreeFish/Assets/CodeLib/BasicCommon/Joystick.cs",
+		"/I/w/ThreeFish/threefish.sublime-project",
+		"/I/w/ThreeFish/Assets/Standard Assets/CrossPlatformInput/Scripts/Joystick.cs",
+		"/I/w/ThreeFish/Assets/FishCameraControl.cs",
+		"/I/w/ThreeFish/Assets/ButtonInput.cs",
+		"/I/w/ThreeFish/Assets/Fish.cs",
+		"/I/w/ThreeFish/Assets/Code/InputManager.cs",
+		"/I/w/ThreeFish/Assets/InputBoss.cs",
+		"/I/w/ThreeFish/Assets/BoatCameraControl.cs",
+		"/I/w/ThreeFish/Assets/GameControls.cs",
+		"/I/w/ThreeFish/Assets/ManCameraControl.cs",
+		"//STRAWBERRY/Code/shadergame/Makefile",
+		"//STRAWBERRY/Code/shadergame/resources/dotland.f.glsl",
+		"//STRAWBERRY/Code/shadergame/shadergame",
+		"//STRAWBERRY/Code/shadergame/shadergame.sublime-project",
+		"//STRAWBERRY/Code/shadergame/Drawable.h",
+		"//STRAWBERRY/Code/shadergame/Drawable.cpp",
+		"//STRAWBERRY/Code/shadergame/CoreWindow.h",
+		"//STRAWBERRY/Code/shadergame/EGLConfig.cpp",
+		"//STRAWBERRY/Code/shadergame/EGLConfig.h",
+		"//STRAWBERRY/Code/shadergame/EGLWindow.cpp",
+		"//STRAWBERRY/Code/shadergame/EGLWindow.h",
+		"//STRAWBERRY/Code/shadergame/main.cpp",
+		"//STRAWBERRY/Code/shadergame/CoreUtils.cpp",
+		"//STRAWBERRY/Code/shadergame/resources/julia.f.glsl",
+		"//STRAWBERRY/Code/shadergame/CoreUtils.h",
+		"//STRAWBERRY/Code/shadergame/resources/speed.f.glsl",
+		"/C/Downloads/Corel PaintShop Pro X7 v17.2.0.17 Multilingual ISO-CORE [GloDLS]/cr-b5767.nfo",
+		"/I/w/shootarrow/shootarrow/code/Window.h",
+		"/I/w/shootarrow/shootarrow/code/main.cpp",
+		"/I/w/shootarrow/shootarrow/code/Window.cpp",
+		"/I/w/shootarrow/shootarrow/code/GLContext.cpp",
+		"/I/w/shootarrow/shootarrow/code/GLContext.h",
+		"/I/w/shootarrow/shootarrow/code/GLGlobal.cpp",
+		"/I/w/shootarrow/shootarrow/code/mainold.cpp",
+		"/I/w/shootarrow/shootarrow/code/main.h",
+		"/I/w/CubeTest/code/OpenGL_Context.cpp",
+		"/I/w/CubeTest/code/globals.cpp",
+		"/I/w/CubeTest/code/globals.h",
+		"//STRAWBERRY/Share/Raspi/Common/esUtil.c",
+		"/I/w/CubeTest/README.md",
+		"/i/w/shootarrow/shootarrow/lib/GLFramework/ESUtil_winrpi.cpp",
+		"/I/w/CubeTest/CubeTest/bin/basic_texture.vert",
+		"/I/w/CubeTest/CubeTest/bin/basic_texture.frag",
+		"//STRAWBERRY/Code/shootarrow/shootarrow/makefile",
+		"//STRAWBERRY/Code/rendercpp/Makefile",
+		"//STRAWBERRY/Code/rendercpp/ESUtil.h",
+		"//STRAWBERRY/Code/rendercpp/ESUtil.cpp",
+		"//STRAWBERRY/Code/glestest/Makefile.include",
+		"/I/w/testarrow/code/main.cpp",
+		"/I/w/glestest1/main.cpp",
+		"//STRAWBERRY/Code/opengles-book-samples/Raspi/Makefile",
+		"/C/Users/3up_000/Downloads/02_getting_an_image_on_the_screen/02_getting_an_image_on_the_screen/02_getting_an_image_on_the_screen.cpp",
+		"//STRAWBERRY/Code/shootarrowtest/code/main.cpp",
+		"/I/w/shootarrow/.gitignore",
+		"/I/w/shootarrowpc/shootarrowpc.sln",
+		"/I/w/shootarrowpc/shootarrowpc.suo",
+		"/I/w/shootarrow/main.cpp",
+		"/I/w/TwinklebearDev-Lessons-master/Lesson4/src/main.cpp",
+		"/I/w/TwinklebearDev-Lessons-master/include/res_path.h",
+		"/I/w/TwinklebearDev-Lessons-master/include/cleanup.h",
+		"/I/w/sdltest/sdltest/Source.cpp",
+		"//STRAWBERRY/piwork/shootarrow/shootarrow.cpp",
+		"//STRAWBERRY/piwork/shootarrow/v1.cpp",
+		"//STRAWBERRY/piwork/openGL-RPi-tutorial/build/Makefile",
+		"/I/w/website/css/main.css",
+		"/I/w/website/index.html",
+		"/I/w/website/portfolio.html",
+		"/I/website/portfolio/index.html",
+		"/I/w/website/js/portfolio.js",
+		"/I/w/website/codepen_OVXgWg/index.html",
+		"/I/website/portfolio/testportfolio.html",
+		"/I/w/website/resume.html",
+		"/I/w/website/main.css",
+		"/I/w/website/STresume2015.html",
+		"/I/w/website/index2.html",
+		"/I/w/robolimb/.gitignore",
+		"/I/w/RoboLimb/Assets/Code/Aimer.cs",
+		"/I/w/RoboLimb/Assets/Code/ActorBody.cs",
+		"/I/w/robolimb/targetweb/index.html",
+		"/I/w/RoboLimb/Assets/Code/Actor.cs",
+		"/I/w/RoboLimb/Assets/Code/ThirdPersonUserControl.cs",
+		"/C/Users/3up_000/Downloads/Calling Mr Blacksmith/Calling Mr Blacksmith/Main.cpp",
+		"/I/w/RoboLimb/Assets/Code/AICharacterControl.cs",
+		"/I/w/RoboLimb/Assets/CodeLib/GumboLib/BasicMachine.cs",
+		"/I/w/RoboLimb/Assets/CodeLib/BasicCommon/BasicTimer.cs",
+		"/I/w/robolimb/Assets/Code/Item.cs",
+		"/I/w/RoboLimb/Assets/Code/ThirdPersonCharacter.cs",
+		"/I/w/RoboLimb/Assets/Code/Game.cs",
+		"/I/w/robolimb/Assets/Code/Aimer.cs",
+		"/I/w/RoboLimb/Assets/Code/ActorBodyPart.cs",
+		"/I/w/robolimb/Assets/Code/Spawner.cs",
+		"/I/w/BKUP/zThreeGreenFish/projectold/Assets/Scripts/Common/ThreeObject.cs",
+		"/I/w/RoboLimb/Assets/Code/User.cs",
+		"/I/w/ninjajam/Assets/Code/Actor/ActorBody.cs"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"*.*",
+			"*.html",
+			"*.css",
+			"*.html",
+			"*.cs",
+			"",
+			"*.cs",
+			"fac*.cs",
+			"*.cs",
+			"*.*workspace",
+			"*.cs",
+			"GooglePlayGames/*.cs",
+			"GooglePlayGames\\*",
+			"*.cs",
+			"I:\\w\\Tetrified\\Assets\\Code\\Game",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"eatSpeed",
+			"eatenTimer",
+			"eatentimer",
+			"attached.add",
+			"attachtra",
+			"HandleTrigger",
+			"attachedinp",
+			"Consume",
+			"Instance.Despawn",
+			"Despawn",
+			"AfterDespawn",
+			"OnDead",
+			"HandleDeadActor",
+			"clipWalls",
+			"SetAttached",
+			"eat!",
+			"health",
+			"attachparent",
+			"parent",
+			"HandleTrigger",
+			"waitHookTimer",
+			"FISH",
+			"HandleTrigger",
+			"SafeMove",
+			"GotoSurface",
+			"SetModeSurface",
+			"retargetTimer",
+			"TargetBest",
+			"followTimer",
+			"SetTargetRecord",
+			"GetLiveableArea",
+			"Register",
+			"settarg",
+			"GotoSurface",
+			"SetModeSurface",
+			"primaryActor",
+			"Activate()",
+			"GotoSurface",
+			"SetModeSurface",
+			"AddActor",
+			"HandleDeadActor",
+			"GotoWater",
+			"GotoSurface",
+			"lockInput",
+			"mySequence",
+			"transform.pos",
+			"m_HorizontalVirtualAxis",
+			"getMaxWidth",
+			"drawable",
+			"make new c",
+			"init_resources",
+			"CreateDrawable",
+			"LoadShader",
+			"mVboQuad",
+			"mTextureFGName",
+			"mTexture0",
+			"GLmTexture0",
+			"_texture0",
+			"mAttribute_coord2d",
+			"_startti",
+			"mpConfig",
+			"_config",
+			"_program",
+			"_vbo_quad",
+			"srand",
+			"shaders/",
+			"SDL_GL_CreateContext",
+			"printshaderlog",
+			"buildshaderpr",
+			"shaders",
+			"WinCreate",
+			"rpi_no",
+			"WinCreate",
+			"timezone",
+			"loop",
+			"loadFromFile",
+			"init",
+			"InitGraphics",
+			"MVP",
+			"Projection",
+			"colorbuffer",
+			"vertexColorID",
+			"vertexbuffer",
+			"programID",
+			"g_color_buffer_data",
+			"g_vertex_buffer_data",
+			"url",
+			".png",
+			"slidx",
+			"slot",
+			"slot4",
+			"slot3",
+			"slot2",
+			"slot1",
+			"slide",
+			"512",
+			"top: 0px;",
+			"opacity: 0.5",
+			"opacity: 0.2",
+			"supertimer",
+			"Recolor",
+			"IsSuper",
+			"supertimer",
+			"Recolor",
+			"clamp",
+			"supertimer",
+			"superTimer",
+			"supert",
+			"DoMajor",
+			"regrowtimer",
+			"glue(",
+			"expire(",
+			"death",
+			"AIThrow",
+			"COOLDOWN",
+			".charge",
+			"throwphase",
+			"throwTimer",
+			"advance",
+			"death",
+			"onintro",
+			"PhysicsChange",
+			"waitingfo",
+			"glue(",
+			"projecti",
+			"SetLayerRecursive",
+			"launch",
+			"update"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"humanActor",
+			"GL_TEXTURE0",
+			"mTexture0",
+			"mAttributeCoord2d",
+			"m_config",
+			"pConfig",
+			"mProgram",
+			"mVboQuad",
+			"slot",
+			"slidecover",
+			"slide4",
+			"slide3",
+			"slide2",
+			"slide1",
+			"slidx",
+			"top: 128px;",
+			"opacity: 0.7",
+			"opacity: 0.5",
+			"RetryFailedState",
+			"weaponType",
+			"throwerType",
+			"movingTurnSpeed",
+			"stationaryTurnSpeed",
+			"gravMultiplier",
+			"runCycleLegOffset",
+			"animSpeedMultiplier",
+			"groundCheckDistance",
+			"groundCheckDistanceDefault",
+			"groundCheckDistance",
+			"isCrouching",
+			"thisCapsule",
+			"capsuleCenter",
+			"capsuleHeight",
+			"groundNormal",
+			"forwardAmount",
+			"turnAmount",
+			"isGrounded",
+			"thisAnimator",
+			"thisRigidbody",
+			"thisCharacter",
+			"thisCam",
+			"moveVec",
+			"doJump",
+			"()",
+			"Invalidate",
+			"Validate",
+			"ValidOFf",
+			"Die()",
+			"",
+			"isPropel",
+			"propelVel",
+			"coastVel",
+			"VehicleActor",
+			"AgentGoal",
+			");",
+			"BasicTimer",
+			"GumboTask.Tick",
+			"GumboTask.Start",
+			"static bool? Tick",
+			"static bool Tick",
+			"static void Start",
+			"GumboTask task, GumboAgent agent",
+			"GumboTask task,",
+			"FinishDeleg",
+			"TickDeleg",
+			"StartDeleg",
+			"tickDict",
+			"startDict",
+			"GetTick",
+			"StartDeleg",
+			"TickDeleg",
+			"NvTimer",
+			"LazySingletonBehavior",
+			"",
+			"activeWeapon",
+			"Ability",
+			"GetNormalActor",
+			"normal",
+			"NormalActor",
+			"GetGenericActor",
+			"velocity",
+			"RogueFish",
+			"GetActorUID",
+			"EntityProperties",
+			"GoogLogger.e",
+			"LazySingletonBehavior",
+			"logGumbo",
+			"GoogLogger.",
+			"Logger.Error(",
+			"Logger.Warn(",
+			"Logger.Info(",
+			"Logger.Debug(",
+			"PieceCubeType",
+			"cubeType",
+			"mDirector",
+			"TetrDirector",
+			"TetrBridge"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Assets/Code/Actors/Actor.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3698,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1577,
+								1727
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"188,197": "'ActorType' is not a known identifier",
+								"2694,2699": "'Utils' is not a known identifier",
+								"2700,2711": "'?' does not contain a definition for 'CanInteract'",
+								"2724,2725": "Error: Boolean"
+							},
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 632.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Assets/Code/Actors/Food.cs",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1425,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								777,
+								777
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Assets/Code/Actors/ActorMotor.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6879,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1550,
+								1550
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"oops":
+							{
+								"1599,1604": "'other' is not a known identifier",
+								"1605,1614": "'?' does not contain a definition for 'transform'",
+								"1615,1623": "'?' does not contain a definition for 'position'",
+								"1626,1632": "Cannot convert from System.Int32 to UnityEngine.Vector3"
+							},
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 63.0,
+						"translation.y": 604.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2575,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										133,
+										144
+									],
+									[
+										282,
+										293
+									],
+									[
+										486,
+										497
+									],
+									[
+										761,
+										774
+									],
+									[
+										1105,
+										1118
+									],
+									[
+										1343,
+										1355
+									],
+									[
+										1619,
+										1629
+									],
+									[
+										1778,
+										1788
+									],
+									[
+										1902,
+										1912
+									],
+									[
+										2043,
+										2053
+									],
+									[
+										2091,
+										2101
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								1879,
+								1879
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 4,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 975.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Assets/Code/Actors/Boat.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1558,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								115,
+								115
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"717,726": "'ActorType' is not a known identifier",
+								"727,731": "'?' does not contain a definition for 'HOOK'"
+							},
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Assets/Code/User.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2443,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1663,
+								1663
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"217,226": "'ActorType' is not a known identifier",
+								"250,259": "'ActorType' is not a known identifier",
+								"262,263": "Cannot convert from System.Collections.Generic.List`1[[?]] to System.Collections.Generic.List`1[[?]]",
+								"632,641": "'ActorType' is not a known identifier"
+							},
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 630.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Assets/Code/SpawnBoss.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2649,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2392,
+								2399
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1177.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "Assets/CodeLib/BasicCommon/BasicTimer.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1938,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Assets/Code/Actors/Actor.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3698,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1106,
+								1116
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"188,197": "'ActorType' is not a known identifier",
+								"2694,2699": "'Utils' is not a known identifier",
+								"2700,2711": "'?' does not contain a definition for 'CanInteract'",
+								"2724,2725": "Error: Boolean"
+							},
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 199.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "Assets/Code/Actors/Hook.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 129,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								109,
+								109
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"0,5": "Using directive is not used by code and can be removed safely.",
+								"19,24": "Using directive is not used by code and can be removed safely.",
+								"38,43": "Using directive is not used by code and can be removed safely."
+							},
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "Assets/Code/Actors/ActorMouth.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1429,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1358,
+								1358
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"oops":
+							{
+								"170,175": "Name should have prefix '_'. (Rule 'Fields').",
+								"19,24": "Using directive is not used by code and can be removed safely.",
+								"665,669": "'this.' is redundant and can be removed safely.",
+								"980,981": "Assignment is redundant"
+							},
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 209.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "Assets/Code/Actors/ActorBody.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1003,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								781,
+								781
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"169,174": "Name should have prefix '_'. (Rule 'Fields').",
+								"19,24": "Using directive is not used by code and can be removed safely.",
+								"199,204": "Name should have prefix '_'. (Rule 'Fields').",
+								"229,241": "Name should have prefix '_'. (Rule 'Fields').",
+								"281,293": "Name should have prefix '_'. (Rule 'Fields').",
+								"319,332": "Name should have prefix '_'. (Rule 'Fields').",
+								"435,439": "'this.' is redundant and can be removed safely.",
+								"613,618": "Parameter can be IComparable",
+								"821,824": "Parameter can be IComparable"
+							},
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "Assets/Code/Actors/Fish.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2360,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								406,
+								406
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"151,163": "Convert to constant",
+								"1536,1540": "'this.' is redundant and can be removed safely.",
+								"1609,1613": "'this.' is redundant and can be removed safely.",
+								"1754,1760": "Convert to constant",
+								"227,243": "Convert to constant",
+								"303,309": "Name should have prefix '_'. (Rule 'Fields').",
+								"328,337": "Name should have prefix '_'. (Rule 'Fields').",
+								"358,368": "Name should have prefix '_'. (Rule 'Fields').",
+								"371,376": "Initializing field by default value is redundant",
+								"38,43": "Using directive is not used by code and can be removed safely.",
+								"395,403": "Convert to constant",
+								"615,619": "Argument value is redundant",
+								"64,69": "Using directive is not used by code and can be removed safely."
+							},
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.variable_get":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "",
+	"project": "threefish.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"actorb",
+				"Code\\Actors\\ActorBody.cs"
+			],
+			[
+				"actorm",
+				"Code\\Actors\\ActorMotor.cs"
+			],
+			[
+				"fish",
+				"Code\\Actors\\Fish.cs"
+			],
+			[
+				"hook",
+				"Code\\Actors\\Hook.cs"
+			],
+			[
+				"boatc",
+				"Code\\BoatCameraControl.cs"
+			],
+			[
+				"act",
+				"Code\\Actors\\Actor.cs"
+			],
+			[
+				"food",
+				"Code\\Actors\\Food.cs"
+			],
+			[
+				"basict",
+				"CodeLib\\BasicCommon\\BasicTimer.cs"
+			],
+			[
+				"wor",
+				"Code\\World.cs"
+			],
+			[
+				"userm",
+				"Code\\UserManager.cs"
+			],
+			[
+				"inputb",
+				"Code\\InputBoss.cs"
+			],
+			[
+				"control",
+				"Code\\GameControls.cs"
+			],
+			[
+				"aima",
+				"Code\\Brains\\AIManager.cs"
+			],
+			[
+				"foodm",
+				"Code\\Actors\\FoodModifier.cs"
+			],
+			[
+				"us",
+				"Code\\User.cs"
+			],
+			[
+				"userma",
+				"Code\\UserManager.cs"
+			],
+			[
+				"brainr",
+				"Code\\Brains\\BrainRecord.cs"
+			],
+			[
+				"basi",
+				"CodeLib\\BasicCommon\\BasicTimer.cs"
+			],
+			[
+				"hoo",
+				"Code\\Actors\\Hook.cs"
+			],
+			[
+				"wo",
+				"Code\\World.cs"
+			],
+			[
+				"acto",
+				"Code\\Actors\\Actor.cs"
+			],
+			[
+				"gamec",
+				"Code\\GameControls.cs"
+			],
+			[
+				"fishc",
+				"Code\\FishCameraControl.cs"
+			],
+			[
+				"boat",
+				"Code\\Actors\\Boat.cs"
+			],
+			[
+				"boa",
+				"Code\\Actors\\Boat.cs"
+			],
+			[
+				"u",
+				"Code\\User.cs"
+			],
+			[
+				"world",
+				"Code\\World.cs"
+			],
+			[
+				"aich",
+				"Code\\AICharacterControl.cs"
+			],
+			[
+				"basicm",
+				"CodeLib\\GumboLib\\BasicMachine.cs"
+			],
+			[
+				"ac",
+				"Code\\Actor.cs"
+			],
+			[
+				"game",
+				"Code\\Game.cs"
+			],
+			[
+				"bas",
+				"CodeLib\\BasicCommon\\BasicTimer.cs"
+			],
+			[
+				"gam",
+				"Code\\Game.cs"
+			],
+			[
+				"baasic",
+				"CodeLib\\BasicCommon\\BasicTimer.cs"
+			],
+			[
+				"thirdp",
+				"Code\\ThirdPersonUserControl.cs"
+			],
+			[
+				"actorin",
+				"Code\\Actors\\ActorInfo.cs"
+			],
+			[
+				"enti",
+				"Code\\Game\\Entity.cs"
+			],
+			[
+				"gamem",
+				"Code\\GameMgr.cs"
+			],
+			[
+				"con",
+				"Code\\Constants.cs"
+			],
+			[
+				"a",
+				"Code\\Game\\Ability.cs"
+			],
+			[
+				"googm",
+				"Code\\UI\\GoogMgr.cs"
+			],
+			[
+				"nor",
+				"Code\\Game\\NormalActor.cs"
+			],
+			[
+				"abi",
+				"Code\\Game\\Ability.cs"
+			],
+			[
+				"veh",
+				"Code\\Game\\VehicleActor.cs"
+			],
+			[
+				"va",
+				"Code\\Game\\Vars.cs"
+			],
+			[
+				"co",
+				"Code\\Constants.cs"
+			],
+			[
+				"v",
+				"Code\\Game\\Vars.cs"
+			],
+			[
+				"we",
+				"Code\\Game\\Weapon.cs"
+			],
+			[
+				"ent",
+				"Code\\Game\\Entity.cs"
+			],
+			[
+				"norm",
+				"Code\\Game\\NormalActor.cs"
+			],
+			[
+				"en",
+				"Code\\Game\\Entity.cs"
+			],
+			[
+				"fac",
+				"Code\\Game\\FactoryEntity.cs"
+			],
+			[
+				"wea",
+				"Code\\Game\\Weapon.cs"
+			],
+			[
+				"bitm",
+				"CodeLib\\BasicCommon\\BitMask.cs"
+			],
+			[
+				"aia",
+				"Code\\Game\\AIAgent.cs"
+			],
+			[
+				"vehi",
+				"Code\\Game\\VehicleActor.cs"
+			],
+			[
+				"vit",
+				"Code\\Game\\Vitals.cs"
+			],
+			[
+				"boata",
+				"Code\\Game\\BoatActor.cs"
+			],
+			[
+				"basicti",
+				"CodeLib\\BasicCommon\\BasicTimer.cs"
+			],
+			[
+				"worlf",
+				"Code\\WorldFactory.cs"
+			],
+			[
+				"cons",
+				"Code\\Constants.cs"
+			],
+			[
+				"abil",
+				"Code\\Game\\Ability.cs"
+			],
+			[
+				"log",
+				"CodeLib\\BasicCommon\\Logger.cs"
+			],
+			[
+				"nvt",
+				"CodeLib\\Common\\NvTimer.cs"
+			],
+			[
+				"gumboag",
+				"Code\\GumboAI\\GumboCore\\GumboAgent.cs"
+			],
+			[
+				"gumbota",
+				"Code\\GumboAI\\GumboCore\\GumboTask.cs"
+			],
+			[
+				"gumbos",
+				"Code\\GumboAI\\GumboCore\\GumboSense.cs"
+			],
+			[
+				"eff",
+				"Code\\Game\\Effect.cs"
+			],
+			[
+				"typ",
+				"GooglePlayGames\\Platforms\\Native\\Cwrapper\\Types.cs"
+			],
+			[
+				"vi",
+				"Code\\Game\\Vitals.cs"
+			],
+			[
+				"ab",
+				"Code\\Game\\Ability.cs"
+			],
+			[
+				"e",
+				"Code\\Game\\Entity.cs"
+			],
+			[
+				"bo",
+				"Code\\Game\\BoatActor.cs"
+			],
+			[
+				"ut",
+				"CodeLib\\Common\\Utilities.cs"
+			],
+			[
+				"pre",
+				"CodeLib\\Common\\PrefsFile.cs"
+			],
+			[
+				"inp",
+				"Code\\UI\\InputMgr.cs"
+			],
+			[
+				"db",
+				"Code\\UI\\Dbg.cs"
+			],
+			[
+				"",
+				"Code\\Game\\Actor.cs"
+			],
+			[
+				"w",
+				"Code\\World.cs"
+			],
+			[
+				"emo",
+				"Code\\Game\\FactoryEmoji.cs"
+			],
+			[
+				"it",
+				"Code\\Game\\Item.cs"
+			],
+			[
+				"i",
+				"Code\\Game\\Item.cs"
+			],
+			[
+				"ite",
+				"Code\\Game\\Item.cs"
+			],
+			[
+				"ai",
+				"Code\\Game\\AIAgent.cs"
+			],
+			[
+				"fa",
+				"Code\\Game\\FactoryEntity.cs"
+			],
+			[
+				"no",
+				"Code\\Game\\NormalActor.cs"
+			],
+			[
+				"fisha",
+				"Code\\Game\\FishActor.cs"
+			],
+			[
+				"uti",
+				"CodeLib\\Common\\Utilities.cs"
+			],
+			[
+				"fis",
+				"Code\\Game\\FishActor.cs"
+			],
+			[
+				"goog",
+				"Code\\UI\\GoogMgr.cs"
+			],
+			[
+				"fact",
+				"Code\\Game\\FactoryEntity.cs"
+			],
+			[
+				"debugv",
+				"Code\\Debug\\DebugView.cs"
+			],
+			[
+				"camerm",
+				"Code\\Interact\\CameraMgr.cs"
+			],
+			[
+				"blo",
+				"Code\\Game\\BlockMgr.cs"
+			],
+			[
+				"vars",
+				"Code\\Game\\Vars.cs"
+			],
+			[
+				"user",
+				"Code\\User.cs"
+			],
+			[
+				"playg",
+				"GooglePlayGames\\ISocialPlatform\\PlayGamesPlatform.cs"
+			],
+			[
+				"googl",
+				"GooglePlayGames\\OurUtils\\GoogLogger.cs"
+			],
+			[
+				"uiw",
+				"Code\\UI\\UIWheel.cs"
+			],
+			[
+				"inpu",
+				"Code\\UI\\InputMgr.cs"
+			],
+			[
+				"mak",
+				"Code\\Interact\\Maker.cs"
+			],
+			[
+				"threa",
+				"Code\\Game\\ThreatList.cs"
+			],
+			[
+				"go",
+				"Code\\UI\\GoogMgr.cs"
+			],
+			[
+				"uiwh",
+				"Code\\UI\\UIWheel.cs"
+			],
+			[
+				"uie",
+				"Code\\UI\\UIEntity.cs"
+			],
+			[
+				"threatl",
+				"Code\\ThreatList.cs"
+			],
+			[
+				"isom",
+				"Code\\Lib\\Common\\IsoMath.cs"
+			],
+			[
+				"state",
+				"Code\\Lib\\Common\\StateMachine.cs"
+			],
+			[
+				"statem",
+				"Code\\Lib\\StateMachine.cs"
+			],
+			[
+				"playga",
+				"GooglePlayGames\\ISocialPlatform\\PlayGamesPlatform.cs"
+			],
+			[
+				"uim",
+				"UI\\UIMgr.cs"
+			],
+			[
+				"puzzp",
+				"Game\\PuzzleParams.cs"
+			],
+			[
+				"gamepa",
+				"Game\\GameParams.cs"
+			],
+			[
+				"btn",
+				"ZUI\\ZUIBtnHint.cs"
+			],
+			[
+				"hint",
+				"ZUI\\ZUIBtnHint.cs"
+			],
+			[
+				"inv",
+				"Game\\TetrInventory.cs"
+			],
+			[
+				"pu",
+				"Game\\PuzzleParams.cs"
+			],
+			[
+				"dir",
+				"Game\\TetrDirector.cs"
+			],
+			[
+				"tetrg",
+				"Game\\TetrGame.cs"
+			],
+			[
+				"zuib",
+				"ZUI\\ZUIBtnRestart.cs"
+			],
+			[
+				"puzzlep",
+				"Game\\PuzzleParams.cs"
+			],
+			[
+				"param",
+				"Game\\GameParams.cs"
+			],
+			[
+				"specialro",
+				"SpecialRotate.cs"
+			],
+			[
+				"uibuttonc",
+				"NGUI\\Interaction\\UIButtonColor.cs"
+			],
+			[
+				"uibuttonsc",
+				"NGUI\\Interaction\\UIButtonScale.cs"
+			],
+			[
+				"uibu",
+				"NGUI\\Interaction\\UIButton.cs"
+			],
+			[
+				"uibut",
+				"NGUI\\Interaction\\UIButtonColor.cs"
+			],
+			[
+				"tetrbr",
+				"Game\\TetrBridge.cs"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"I:\\w\\OneArrow\\Assets\\TauFactory.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 604.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 311.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
