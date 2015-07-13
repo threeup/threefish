@@ -11,7 +11,7 @@ namespace GoodFish
         FISH_SMALL,
         FISH_MEDIUM,
         FISH_LARGE,
-        FISH_GIANT,
+        FISH_SHARK,
         FOOD,
     }
 
@@ -25,7 +25,7 @@ namespace GoodFish
                 case ActorType.FISH_SMALL: 
                 case ActorType.FISH_MEDIUM: 
                 case ActorType.FISH_LARGE: 
-                case ActorType.FISH_GIANT:
+                case ActorType.FISH_SHARK:
                     return true;
             }
             return false;

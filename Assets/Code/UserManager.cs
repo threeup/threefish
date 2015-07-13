@@ -7,7 +7,6 @@ namespace GoodFish
     [System.Serializable]
     public class UserManager : MonoBehaviour
     {
-    	public User worldUser;
     	public List<User> users;
 
         private int nextUser = 0;
@@ -16,10 +15,6 @@ namespace GoodFish
 
         void Awake()
         {
-            if( !users.Contains(worldUser) )
-            {
-                users.Add(worldUser);
-            }
             nextUser = users.Count;
         }
 

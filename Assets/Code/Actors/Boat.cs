@@ -7,6 +7,7 @@ namespace GoodFish
 	public class Boat : Actor {
 
 		public Hook hook;
+		public bool hasHook = false; 
 		private BasicTimer waitHookTimer = new BasicTimer(0.3f, false);
 
 		public UnityEngine.UI.Toggle.ToggleEvent onToggleHook;
@@ -21,8 +22,8 @@ namespace GoodFish
 
 		public override void FreeInput(float deltaTime, float horizontalAxis, float verticalAxis, bool btnA, bool btnX)
 		{
-			motor.Throttle(deltaTime, horizontalAxis);
-			bool hasHook = hook != null && hook.IsAlive;
+			hasHook = hook != null && hook.IsAlive;
+			motor.Throttle(deltaTime, horizontalAxis * (hasHook ? 0.5f : 1f));
 			if( verticalAxis < -0.01f && !hasHook && waitHookTimer.Paused )
 			{
 				hook = SpawnBoss.Instance.Spawn(ActorType.HOOK) as Hook;
@@ -30,7 +31,7 @@ namespace GoodFish
 			}	
 			if( hasHook )
 			{
-				hook.motor.Throttle(deltaTime, verticalAxis);
+				hook.motor.Throttle(deltaTime, verticalAxis * (btnA ? 1f : 0.5f) );
 				hook.motor.SetPosition(this.transform.position.x, null, this.transform.position.z);
 			}
 		}
@@ -43,19 +44,24 @@ namespace GoodFish
 
 		public override void Consume(Actor other)
 		{
-			int caughtWeight = 0;
-			foreach(Actor child in other.attached)
+			if( other != hook )
 			{
+				return;
+			}
+			int caughtWeight = 0;
+			for(int i=other.attached.Count-1; i>=0; --i)
+			{
+				Actor child = other.attached[i];
 				caughtWeight += child.weight;
-				SpawnBoss.Instance.Despawn(child);
+				base.Consume(child);
 			}
 			if( caughtWeight > 0 || other.lifeTime > 2f )
 			{
-				other.attached.Clear();
-				SpawnBoss.Instance.Despawn(other);
 				waitHookTimer.Reset();
 				health += caughtWeight;
 				Debug.Log("HOOK "+other+" ="+caughtWeight);
+				hook = null;
+				base.Consume(other);
 			}
 			
 		}

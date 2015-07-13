@@ -10,6 +10,7 @@ namespace GoodFish
         public bool isAI = true;
         public List<ActorType> actorTypes = new List<ActorType>(); 
     	public Actor captain; 
+        public List<Actor> grunts;
         public int lives = 3;
         public int captainLives = 3;
         public int actorCount = 1;
@@ -25,16 +26,25 @@ namespace GoodFish
             {
                 int rangeVal = Random.Range(0,actorTypes.Count);
                 ActorType actorType = actorTypes[rangeVal];
-                Actor actor = SpawnBoss.Instance.Spawn(actorType);
-                actor.OnDead += HandleDeadActor;
-                if( captain == null )
+                Actor spawn = SpawnBoss.Instance.Spawn(actorType);
+                spawn.OnDead += HandleDeadActor;
+                if( captain == null && isControllable )
                 {
-                    captain = actor;
+                    captain = spawn;
+                    if( captain.brain != null )
+                    {
+                        captain.brain.SetAI(isAI);
+                    }
                 }
-                else if( actor.brain != null )
+                else 
                 {
-                    actor.brain.SetAI(true);
+                    grunts.Add(spawn);
+                    if( spawn.brain != null )
+                    {
+                        spawn.brain.SetAI(true);
+                    }
                 }
+                
             }
         }
 
@@ -60,10 +70,15 @@ namespace GoodFish
                 else
                 {
                     captain = SpawnBoss.Instance.Spawn(actor.actorType);
+                    if( captain.brain != null )
+                    {
+                        captain.brain.SetAI(isAI);
+                    }
                 }
             }
             else
             {
+                grunts.Remove(actor);
                 lives--;
                 if( lives == 0 )
                 {
@@ -71,9 +86,15 @@ namespace GoodFish
                 }
                 else
                 {
-                    SpawnBoss.Instance.Spawn(actor.actorType);
+                    Actor spawn = SpawnBoss.Instance.Spawn(actor.actorType);
+                    grunts.Add(spawn);
+                    if( spawn.brain != null )
+                    {
+                        spawn.brain.SetAI(true);
+                    }
                 }
             }
+            
         }
 
         public void Activate()

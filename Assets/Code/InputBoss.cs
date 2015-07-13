@@ -37,8 +37,8 @@ namespace GoodFish
 		void Update () {
 
 			float deltaTime = Time.deltaTime;
-			hasButtonA = Input.GetKey(KeyCode.Space) || virtualButtonA;
-			hasButtonX = Input.GetKey(KeyCode.X) || virtualButtonX;
+			hasButtonA = Input.GetKey(KeyCode.Space) || virtualButtonA  || Input.GetButton("Jump");
+			hasButtonX = Input.GetKey(KeyCode.X) || virtualButtonX || Input.GetButton("Fire1");
 			verticalAxis = Input.GetAxis("Vertical") + virtualVerticalAxis;
 			horizontalAxis = Input.GetAxis("Horizontal") + virtualHorizontalAxis;
 

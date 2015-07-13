@@ -33,12 +33,16 @@ namespace GoodFish
 					case ActorType.FISH_SMALL: 
 					case ActorType.FISH_MEDIUM: 
 					case ActorType.FISH_LARGE: 
-					case ActorType.FISH_GIANT:
 						count = 30;
 						break;
 					case ActorType.FOOD:
 						count = 100;
 						break;
+					case ActorType.FISH_SHARK:
+						count = 3;
+						break;
+					case ActorType.BOAT:
+					case ActorType.HOOK:
 					default:
 						count = 2;
 						break;

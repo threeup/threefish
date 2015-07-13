@@ -103,10 +103,12 @@ namespace GoodFish
 		public override void Consume(Actor other)
 		{
 			int caughtWeight = other.weight;
-			foreach(Actor child in other.attached)
+
+			for(int i=other.attached.Count-1; i>=0; --i)
 			{
+				Actor child = other.attached[i];
 				caughtWeight += child.weight;
-				SpawnBoss.Instance.Despawn(child);
+				base.Consume(child);
 			}
 			health += caughtWeight;
 			base.Consume(other);

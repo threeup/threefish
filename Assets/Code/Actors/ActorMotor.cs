@@ -18,6 +18,7 @@ namespace GoodFish
         private float turnSpeed = 150f;
         private float pitchAcceleration = -100f;
 
+        [SerializeField]
         float speed = 0f;
         Vector3 velocity = Vector3.zero;
         Vector3 motorForward = Vector3.one;
@@ -73,11 +74,6 @@ namespace GoodFish
             if( y != null ) { newPos.y = y.Value; }
             if( z != null ) { newPos.z = z.Value; }
             this.transform.position = newPos;
-        }
-
-        public void SetSpeed(float val)
-        {
-            speed = val;
         }
 
         public void Throttle(float deltaTime, float amount)

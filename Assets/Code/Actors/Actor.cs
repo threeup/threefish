@@ -22,9 +22,6 @@ namespace GoodFish
 		public delegate void OnDeadDelegate(Actor actor);
 		public OnDeadDelegate OnDead;
 
-		public float speed = 0f;
-
-
 		public Brain brain;
 		public ActorMotor motor;
 		public ActorBody body;
