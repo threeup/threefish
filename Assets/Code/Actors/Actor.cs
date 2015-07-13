@@ -13,6 +13,8 @@ namespace GoodFish
 		public int uid = -1;
 
 		public int weight = 1;
+		public int food = 10;
+		public int maxFood = 10;
 		public int health = 10;
 		public int maxHealth = 10;
 		public float lifeTime = 0f;
@@ -21,16 +23,23 @@ namespace GoodFish
 
 		public delegate void OnDeadDelegate(Actor actor);
 		public OnDeadDelegate OnDead;
+		public delegate void OnFacingChangeDelegate(bool val);
+		public OnFacingChangeDelegate OnFacingChange;
 
 		public Brain brain;
 		public ActorMotor motor;
 		public ActorBody body;
+		public ActorHUD hud;
 
+
+		private bool facePositive = true;
+		
 		public Transform attachTransform;
 		public List<Actor> attached = new List<Actor>();
 		public Actor attachParent = null;
 		public float attachOffset = 0f;
 
+		public BasicTimer hungryTimer = new BasicTimer(1f);
 		public BasicTimer eatenTimer = new BasicTimer(0f);
 
 		public Vector3 Forward { get { return motor.MotorForward; } }
@@ -52,7 +61,7 @@ namespace GoodFish
 		{
 			float deltaTime = Time.deltaTime;
 			lifeTime += deltaTime;
-
+			CheckFacing();
 
 			if( attached.Count > 0)
 			{
@@ -74,10 +83,20 @@ namespace GoodFish
 				}
 			}
 
-
+			if( maxFood > 0 && hungryTimer.Tick(deltaTime) )
+			{
+				if( food > 0 )
+				{ 
+					ModifyFood(-1);
+				}
+				else
+				{
+					ModifyHealth(-1);
+				}
+			}
 			if( eatenTimer.Tick(deltaTime) )
 			{
-				health--;
+				ModifyHealth(-2);
 			}
 		}
 
@@ -164,6 +183,39 @@ namespace GoodFish
 			if( OnDead != null )
 			{
 				OnDead(this);
+			}
+		}
+
+		public void ModifyFood(int val)
+		{
+			food = Mathf.Min(maxFood, food + val);
+			if( hud != null )
+			{
+				hud.SetFood( (int)Mathf.Round((float)food/maxFood * 10) );
+			}
+		}
+
+		public void ModifyHealth(int val)
+		{
+			health = Mathf.Min(maxHealth, health + val);
+			if( hud != null )
+			{
+				hud.SetHealth( (int)Mathf.Round((float)health/maxHealth * 10) );
+			}
+		}
+
+
+		public void CheckFacing()
+		{
+			bool shouldFacePositive = motor.MotorForward.z > 0;
+			if( facePositive == shouldFacePositive )
+			{
+				return;
+			}
+			facePositive = shouldFacePositive;
+			if( OnFacingChange != null )
+			{
+				OnFacingChange(facePositive);
 			}
 		}
 

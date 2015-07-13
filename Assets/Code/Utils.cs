@@ -4,6 +4,15 @@ using System.Collections.Generic;
 
 namespace GoodFish
 {
+    public enum HudType
+    {
+        HEALTH,
+        FOOD,
+        SCORE,
+        DESIRE,
+    }
+
+
     public enum ActorType
     {
         BOAT,

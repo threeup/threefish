@@ -71,8 +71,8 @@ namespace GoodFish
 
 		void AddWiggle(float deltaTime)
 		{
-			this.transform.Rotate(Vector3.up, wiggleSpeed*deltaTime);
-			float yaw = this.transform.rotation.eulerAngles.y;
+			body.transform.Rotate(Vector3.up, wiggleSpeed*deltaTime);
+			float yaw = body.transform.rotation.eulerAngles.y;
 			while( yaw > 90 )
 			{
 				yaw -= 180f;
@@ -110,7 +110,7 @@ namespace GoodFish
 				caughtWeight += child.weight;
 				base.Consume(child);
 			}
-			health += caughtWeight;
+			ModifyFood(caughtWeight);
 			base.Consume(other);
 		}
 	}

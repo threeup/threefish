@@ -7,7 +7,7 @@ namespace GoodFish
 {
 	public class FishCameraControl : ChaseCameraControl {
 
-		public Fish fish;
+		private Fish fish;
 
 		private bool isFacingPositive;
 
@@ -21,9 +21,10 @@ namespace GoodFish
 		void Update () 
 		{
 			float deltaTime = Time.deltaTime;
-			SetFacingPositive( fish != null && fish.motor.MotorForward.z > 0);
+			
 			sequenceLock.Tick(deltaTime);
 		}
+
 
 		void LateUpdate()
 		{
@@ -40,12 +41,8 @@ namespace GoodFish
 			this.transform.LookAt(targetPosition);
 		}
 
-		public void SetFacingPositive(bool val)
+		public void HandleFacingChange(bool val)
 		{
-			if( isFacingPositive == val )
-			{
-				return;
-			}
 			isFacingPositive = val;
 			if( target == null )
 			{
@@ -75,10 +72,15 @@ namespace GoodFish
 
 		public void SetActiveFocus(bool val, Actor focalActor)
 		{
+			if( fish != null )
+			{
+				fish.OnFacingChange = null;
+			}
 			Fish focalFish = focalActor as Fish;
 			fish = focalFish;
 			if( fish != null )
 			{
+				fish.OnFacingChange = HandleFacingChange;
 				target = fish.transform;
 			}
 			if( val )

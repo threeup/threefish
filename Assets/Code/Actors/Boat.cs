@@ -58,8 +58,7 @@ namespace GoodFish
 			if( caughtWeight > 0 || other.lifeTime > 2f )
 			{
 				waitHookTimer.Reset();
-				health += caughtWeight;
-				Debug.Log("HOOK "+other+" ="+caughtWeight);
+				ModifyFood(caughtWeight);
 				hook = null;
 				base.Consume(other);
 			}
