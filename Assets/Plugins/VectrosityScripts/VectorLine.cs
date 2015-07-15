@@ -1,4 +1,4 @@
-// Version 4.1.3
+// Version 4.2
 // ©2015 Starscene Software. All rights reserved. Redistribution of source code without permission not allowed.
 
 using UnityEngine;
@@ -15,7 +15,7 @@ public enum Brightness {Fog, None}
 [System.Serializable]
 public class VectorLine {
 	public static string Version () {
-		return "Vectrosity version 4.1.3";
+		return "Vectrosity version 4.2";
 	}
 	
 	UIVertex[] m_UIVertices;
@@ -37,7 +37,7 @@ public class VectorLine {
 	bool m_on2DCanvas;
 	int adjustEnd;
 	Color32 m_color;
-	public Color color {
+	public Color32 color {
 		get {return m_color;}
 		set {
 			m_color = value;
@@ -1050,6 +1050,8 @@ public class VectorLine {
 	}
 	
 	private void SetEndCapColors () {
+		if (m_UIVertices.Length < 4) return;
+		
 		if (m_capType <= EndCap.Mirror) {
 			int vIndex = m_continuous? m_drawStart * 4 : m_drawStart * 2;
 			for (int i = 0; i < 4; i++) {
@@ -1075,15 +1077,15 @@ public class VectorLine {
 		m_capRenderer.SetVertices (m_capVertices, m_active? 8 : 0);
 	}
 	
-	public void SetColor (Color color) {
+	public void SetColor (Color32 color) {
 		SetColor (color, 0, pointsCount);
 	}
 	
-	public void SetColor (Color color, int index) {
+	public void SetColor (Color32 color, int index) {
 		SetColor (color, index, index);
 	}
 	
-	public void SetColor (Color color, int startIndex, int endIndex) {
+	public void SetColor (Color32 color, int startIndex, int endIndex) {
 		int max = MaxSegmentIndex();
 		startIndex = Mathf.Clamp (startIndex*4 + (smoothColor? 2 : 0), 0, max*4);
 		endIndex = Mathf.Clamp ((endIndex + 1)*4 + (smoothColor? 2 : 0), 0, max*4);
@@ -1105,11 +1107,11 @@ public class VectorLine {
 		}
 	}
 
-	public void SetColors (List<Color> lineColors) {
+	public void SetColors (List<Color32> lineColors) {
 		SetColors (lineColors.ToArray());
 	}
 
-	public void SetColors (Color[] lineColors) {
+	public void SetColors (Color32[] lineColors) {
 		if (lineColors == null) {
 			Debug.LogError ("VectorLine.SetColors: lineColors array must not be null");
 			return;
@@ -1841,7 +1843,7 @@ public class VectorLine {
 					pos2 = cam3D.WorldToScreenPoint (m_points3[i+1]);
 				}
 			}
-			if ((pos1.x == pos2.x && pos1.y == pos2.y) || (pos1.z < 0.0f && pos2.z < 0.0f) || (pos1.x > sw && pos2.x > sw) || (pos1.y > sh && pos2.y > sh)) {
+			if ((pos1.x == pos2.x && pos1.y == pos2.y) || (pos1.z < 0.0f && pos2.z < 0.0f) || ((pos1.x > sw && pos1.z < 0.0f) || (pos2.x > sw && pos2.z < 0.0f)) || ((pos1.y > sh && pos1.z < 0.0f) || (pos2.y > sh && pos2.z < 0.0f)) ) {
 				SkipQuad (ref idx, ref widthIdx, ref widthIdxAdd);
 				continue;
 			}
@@ -1928,7 +1930,7 @@ public class VectorLine {
 				pos1 = cam3D.WorldToScreenPoint (m_points3[i]);
 				pos2 = cam3D.WorldToScreenPoint (m_points3[i+1]);
 			}
-			if ((pos1.x == pos2.x && pos1.y == pos2.y) || (pos1.z < 0.0f && pos2.z < 0.0f) || (pos1.x > sw && pos2.x > sw) || (pos1.y > sh && pos2.y > sh)) {
+			if ((pos1.x == pos2.x && pos1.y == pos2.y) || (pos1.z < 0.0f && pos2.z < 0.0f) || ((pos1.x > sw && pos1.z < 0.0f) || (pos2.x > sw && pos2.z < 0.0f)) || ((pos1.y > sh && pos1.z < 0.0f) || (pos2.y > sh && pos2.z < 0.0f)) ) {
 				SkipQuad3D (ref idx, ref widthIdx, ref widthIdxAdd);
 				continue;
 			}
