@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"hea",
+				"healthMaterial	Material"
+			],
+			[
 				"for",
 				"forwardAngle	float"
 			],
@@ -510,10 +514,6 @@
 			[
 				"ot",
 				"otherWeapon"
-			],
-			[
-				"pr",
-				"progressRemaining"
 			]
 		]
 	},
@@ -523,15 +523,15 @@
 			"file": "Assets/Code/Actors/Actor.cs",
 			"settings":
 			{
-				"buffer_size": 3698,
+				"buffer_size": 4770,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "Assets/Code/Actors/Food.cs",
+			"file": "/I/w/threefish/Assets/Code/SpriteBoss.cs",
 			"settings":
 			{
-				"buffer_size": 1425,
+				"buffer_size": 546,
 				"line_ending": "Unix"
 			}
 		},
@@ -539,33 +539,41 @@
 			"file": "Assets/Code/Actors/ActorMotor.cs",
 			"settings":
 			{
-				"buffer_size": 6879,
+				"buffer_size": 6818,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "Searching 429 files for \"attachedinp\"\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Actor.cs:\n   77  			if( IsAttached )\n   78  			{\n   79: 				AttachedInput(deltaTime, horizontalAxis, verticalAxis, btnA, btnX);\n   80  			}\n   81  			else\n   ..\n   89  \n   90  		}\n   91: 		public virtual void AttachedInput(float deltaTime, float horizontalAxis, float verticalAxis, bool btnA, bool btnX)\n   92  		{\n   93  \n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Boat.cs:\n   22  \n   23  \n   24: 		public override void AttachedInput(float deltaTime, float horizontalAxis, float verticalAxis, bool btnA, bool btnX)\n   25  		{\n   26  \n\n3 matches across 2 files\n\n\nSearching 430 files for \"HandleTrigger\"\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Actor.cs:\n   95  		}\n   96  \n   97: 		public virtual void HandleTrigger(Actor other, Vector3 offset)\n   98  		{\n   99  			if( other == null || !Utils.CanInteract(this, other))\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\ActorMouth.cs:\n   33              float forwardAngle = Mathf.Atan2(forward.y, forward.z);\n   34          	Actor otherActor = otherBody != null ? otherBody.actor : null;\n   35:         	actor.HandleTrigger(otherActor, offsetAngle - forwardAngle);\n   36          }\n   37      }\n\n2 matches across 2 files\n\n\nSearching 430 files for \"attached.add\"\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Actor.cs:\n  122  				return;\n  123  			}\n  124: 			attached.Add(other);\n  125  			other.attachParent = this;\n  126  			other.attachOffset = offset;\n\n1 match in 1 file\n\n\nSearching 430 files for \"eatenTimer\"\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Actor.cs:\n   35  		public float attachOffset = 0f;\n   36  \n   37: 		public BasicTimer eatenTimer = new BasicTimer(0f);\n   38  \n   39  		public Vector3 Forward { get { return motor.MotorForward; } }\n   ..\n   46  		{\n   47  			Detach();\n   48: 			eatenTimer = new BasicTimer(0f);\n   49  			lifeTime = 0f;\n   50  			health = maxHealth;\n   ..\n   71  \n   72  \n   73: 			if( eatenTimer.Tick(deltaTime) )\n   74  			{\n   75  				health--;\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Fish.cs:\n   96  		{\n   97  \n   98: 			other.eatenTimer.Duration = eatSpeed;\n   99: 			other.eatenTimer.Reset();\n  100  			base.Attach(other, offset);\n  101  		}\n\nI:\\w\\ThreeFish\\Assets\\Prefabs\\ProtoBoat.prefab:\n    <binary>\n\nI:\\w\\ThreeFish\\Assets\\Prefabs\\ProtoFishLarge.prefab:\n    <binary>\n\nI:\\w\\ThreeFish\\Assets\\Prefabs\\ProtoFishMedium.prefab:\n    <binary>\n\nI:\\w\\ThreeFish\\Assets\\Prefabs\\ProtoFishSmall.prefab:\n    <binary>\n\nI:\\w\\ThreeFish\\Assets\\Prefabs\\ProtoFood.prefab:\n    <binary>\n\nI:\\w\\ThreeFish\\Assets\\Prefabs\\ProtoHook.prefab:\n    <binary>\n\n11 matches across 8 files\n",
+			"file": "Assets/Code/FishCameraControl.cs",
 			"settings":
 			{
-				"buffer_size": 2575,
+				"buffer_size": 1715,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 429 files for \"attachedinp\"\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Actor.cs:\n   77  			if( IsAttached )\n   78  			{\n   79: 				AttachedInput(deltaTime, horizontalAxis, verticalAxis, btnA, btnX);\n   80  			}\n   81  			else\n   ..\n   89  \n   90  		}\n   91: 		public virtual void AttachedInput(float deltaTime, float horizontalAxis, float verticalAxis, bool btnA, bool btnX)\n   92  		{\n   93  \n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Boat.cs:\n   22  \n   23  \n   24: 		public override void AttachedInput(float deltaTime, float horizontalAxis, float verticalAxis, bool btnA, bool btnX)\n   25  		{\n   26  \n\n3 matches across 2 files\n\n\nSearching 430 files for \"HandleTrigger\"\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Actor.cs:\n   95  		}\n   96  \n   97: 		public virtual void HandleTrigger(Actor other, Vector3 offset)\n   98  		{\n   99  			if( other == null || !Utils.CanInteract(this, other))\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\ActorMouth.cs:\n   33              float forwardAngle = Mathf.Atan2(forward.y, forward.z);\n   34          	Actor otherActor = otherBody != null ? otherBody.actor : null;\n   35:         	actor.HandleTrigger(otherActor, offsetAngle - forwardAngle);\n   36          }\n   37      }\n\n2 matches across 2 files\n\n\nSearching 430 files for \"attached.add\"\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Actor.cs:\n  122  				return;\n  123  			}\n  124: 			attached.Add(other);\n  125  			other.attachParent = this;\n  126  			other.attachOffset = offset;\n\n1 match in 1 file\n\n\nSearching 430 files for \"eatenTimer\"\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Actor.cs:\n   35  		public float attachOffset = 0f;\n   36  \n   37: 		public BasicTimer eatenTimer = new BasicTimer(0f);\n   38  \n   39  		public Vector3 Forward { get { return motor.MotorForward; } }\n   ..\n   46  		{\n   47  			Detach();\n   48: 			eatenTimer = new BasicTimer(0f);\n   49  			lifeTime = 0f;\n   50  			health = maxHealth;\n   ..\n   71  \n   72  \n   73: 			if( eatenTimer.Tick(deltaTime) )\n   74  			{\n   75  				health--;\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Fish.cs:\n   96  		{\n   97  \n   98: 			other.eatenTimer.Duration = eatSpeed;\n   99: 			other.eatenTimer.Reset();\n  100  			base.Attach(other, offset);\n  101  		}\n\nI:\\w\\ThreeFish\\Assets\\Prefabs\\ProtoBoat.prefab:\n    <binary>\n\nI:\\w\\ThreeFish\\Assets\\Prefabs\\ProtoFishLarge.prefab:\n    <binary>\n\nI:\\w\\ThreeFish\\Assets\\Prefabs\\ProtoFishMedium.prefab:\n    <binary>\n\nI:\\w\\ThreeFish\\Assets\\Prefabs\\ProtoFishSmall.prefab:\n    <binary>\n\nI:\\w\\ThreeFish\\Assets\\Prefabs\\ProtoFood.prefab:\n    <binary>\n\nI:\\w\\ThreeFish\\Assets\\Prefabs\\ProtoHook.prefab:\n    <binary>\n\n11 matches across 8 files\n\n\nSearching 430 files for \"Instance.Despawn\"\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Actor.cs:\n  149  		{\n  150  			other.attached.Clear();\n  151: 			SpawnBoss.Instance.Despawn(other);\n  152  		}\n  153  \n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Boat.cs:\n   50  				Actor child = other.attached[i];\n   51  				caughtWeight += child.weight;\n   52: 				SpawnBoss.Instance.Despawn(child);\n   53  			}\n   54  			if( caughtWeight > 0 || other.lifeTime > 2f )\n   55  			{\n   56  				other.attached.Clear();\n   57: 				SpawnBoss.Instance.Despawn(other);\n   58  				waitHookTimer.Reset();\n   59  				health += caughtWeight;\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Fish.cs:\n  107  			{\n  108  				caughtWeight += child.weight;\n  109: 				SpawnBoss.Instance.Despawn(child);\n  110  			}\n  111  			health += caughtWeight;\n\n4 matches across 3 files\n\n\nSearching 430 files for \"Instance.Despawn\"\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Actor.cs:\n  149  		{\n  150  			other.attached.Clear();\n  151: 			SpawnBoss.Instance.Despawn(other);\n  152  		}\n  153  \n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\Fish.cs:\n  107  			{\n  108  				caughtWeight += child.weight;\n  109: 				SpawnBoss.Instance.Despawn(child);\n  110  			}\n  111  			health += caughtWeight;\n\n2 matches across 2 files\n\n\nSearching 430 files for \"SetSpeed\"\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\ActorMotor.cs:\n   76          }\n   77  \n   78:         public void SetSpeed(float val)\n   79          {\n   80              speed = val;\n\nI:\\w\\ThreeFish\\Assets\\Demigiant\\DOTween\\DOTween.XML:\n  153              <para>Has no effect on Sequences or if the tween has already started</para></summary>\n  154          </member>\n  155:         <member name=\"M:DG.Tweening.TweenParams.SetSpeedBased(System.Boolean)\">\n  156              <summary>If isSpeedBased is TRUE sets the tween as speed based\n  157              (the duration will represent the number of units the tween moves x second).\n  ...\n  523              <para>Has no effect on Sequences or if the tween has already started</para></summary>\n  524          </member>\n  525:         <member name=\"M:DG.Tweening.TweenSettingsExtensions.SetSpeedBased``1(``0)\">\n  526              <summary>If isSpeedBased is TRUE sets the tween as speed based\n  527              (the duration will represent the number of units the tween moves x second).\n  528              <para>Has no effect on Sequences, nested tweens, or if the tween has already started</para></summary>\n  529          </member>\n  530:         <member name=\"M:DG.Tweening.TweenSettingsExtensions.SetSpeedBased``1(``0,System.Boolean)\">\n  531              <summary>If isSpeedBased is TRUE sets the tween as speed based\n  532              (the duration will represent the number of units the tween moves x second).\n\n4 matches across 2 files\n\n\nSearching 435 files for \"worldUser\"\n\nI:\\w\\ThreeFish\\Assets\\Code\\UserManager.cs:\n    8      public class UserManager : MonoBehaviour\n    9      {\n   10:     	public User worldUser;\n   11      	public List<User> users;\n   12  \n\nI:\\w\\ThreeFish\\Assets\\Scenes\\game.unity:\n    <binary>\n\n2 matches across 2 files\n\n\nSearching 450 files for \"FishCameraControl\"\n\nI:\\w\\ThreeFish\\Assets\\Code\\FishCameraControl.cs:\n    6  namespace GoodFish\n    7  {\n    8: 	public class FishCameraControl : ChaseCameraControl {\n    9  \n   10  		private Fish fish;\n\nI:\\w\\ThreeFish\\Assets\\Code\\World.cs:\n   24  		public GameControls controls;\n   25  		public BoatCameraControl boatCamera;\n   26: 		public FishCameraControl fishCamera;\n   27          public float SurfaceY { get { return surfaceBounds.min.y; } }\n   28  \n\nI:\\w\\ThreeFish\\Assets\\Scenes\\game.unity:\n    <binary>\n\n3 matches across 3 files\n\n\nSearching 450 files for \"HandleFacingChange\"\n\nI:\\w\\ThreeFish\\Assets\\Code\\FishCameraControl.cs:\n   42  		}\n   43  \n   44: 		public void HandleFacingChange(bool val)\n   45  		{\n   46  			isFacingPositive = val;\n   ..\n   81  			if( fish != null )\n   82  			{\n   83: 				fish.OnFacingChange = HandleFacingChange;\n   84  				target = fish.transform;\n   85  			}\n\nI:\\w\\ThreeFish\\Assets\\Code\\Actors\\ActorHUD.cs:\n   34              desireRenderer.material = desireMaterial;\n   35  \n   36:             actor.OnFacingChange += HandleFacingChange;    \n   37          }\n   38  \n   ..\n  122  \n  123  \n  124:         public void HandleFacingChange(bool val)\n  125          {\n  126              health.transform.Rotate(new Vector3(0f, 180f, 0f)); \n\nI:\\w\\threefish\\Assets\\Code\\Actors\\ActorHUD.cs:\n   34              desireRenderer.material = desireMaterial;\n   35  \n   36:             actor.OnFacingChange += HandleFacingChange;    \n   37          }\n   38  \n   ..\n  122  \n  123  \n  124:         public void HandleFacingChange(bool val)\n  125          {\n  126              health.transform.Rotate(new Vector3(0f, 180f, 0f)); \n\n6 matches across 3 files\n",
+			"settings":
+			{
+				"buffer_size": 7332,
 				"line_ending": "Windows",
 				"name": "Find Results",
 				"scratch": true
 			}
 		},
 		{
-			"file": "Assets/Code/Actors/Boat.cs",
+			"file": "Assets/Code/World.cs",
 			"settings":
 			{
-				"buffer_size": 1558,
-				"line_ending": "Unix"
+				"buffer_size": 1889,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "Assets/Code/User.cs",
 			"settings":
 			{
-				"buffer_size": 2443,
+				"buffer_size": 3150,
 				"line_ending": "Windows"
 			}
 		},
@@ -573,8 +581,16 @@
 			"file": "Assets/Code/SpawnBoss.cs",
 			"settings":
 			{
-				"buffer_size": 2649,
+				"buffer_size": 2731,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Code/Utils.cs",
+			"settings":
+			{
+				"buffer_size": 1708,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -586,11 +602,27 @@
 			}
 		},
 		{
+			"file": "Assets/Code/Actors/Boat.cs",
+			"settings":
+			{
+				"buffer_size": 1634,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "Assets/Code/Actors/Hook.cs",
 			"settings":
 			{
-				"buffer_size": 129,
+				"buffer_size": 418,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Code/UserManager.cs",
+			"settings":
+			{
+				"buffer_size": 1774,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -602,10 +634,10 @@
 			}
 		},
 		{
-			"file": "Assets/Code/Actors/ActorBody.cs",
+			"file": "/I/w/threefish/Assets/Code/Actors/ActorHUD.cs",
 			"settings":
 			{
-				"buffer_size": 1003,
+				"buffer_size": 3869,
 				"line_ending": "Unix"
 			}
 		},
@@ -613,7 +645,7 @@
 			"file": "Assets/Code/Actors/Fish.cs",
 			"settings":
 			{
-				"buffer_size": 2360,
+				"buffer_size": 2392,
 				"line_ending": "Unix"
 			}
 		}
@@ -823,6 +855,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"HandleFacingChange",
+			"FishCameraControl",
+			"ondead",
+			"wigg",
+			"health",
+			"worldUser",
+			"worlduser",
+			"SetSpeed",
+			"speed =",
+			"Instance.Despawn",
 			"eatSpeed",
 			"eatenTimer",
 			"eatentimer",
@@ -940,17 +982,7 @@
 			"COOLDOWN",
 			".charge",
 			"throwphase",
-			"throwTimer",
-			"advance",
-			"death",
-			"onintro",
-			"PhysicsChange",
-			"waitingfo",
-			"glue(",
-			"projecti",
-			"SetLayerRecursive",
-			"launch",
-			"update"
+			"throwTimer"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1065,7 +1097,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -1074,63 +1106,82 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3698,
+						"buffer_size": 4770,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1577,
-								1727
+								783,
+								783
 							]
 						],
 						"settings":
 						{
 							"oops":
 							{
-								"188,197": "'ActorType' is not a known identifier",
-								"2694,2699": "'Utils' is not a known identifier",
-								"2700,2711": "'?' does not contain a definition for 'CanInteract'",
-								"2724,2725": "Error: Boolean"
+								"4231,4238": "'ActorHUD' does not contain a definition for 'SetFood'",
+								"4284,4285": "'ActorHUD' does not contain a definition for 'SetFood'",
+								"4418,4427": "'ActorHUD' does not contain a definition for 'SetHealth'",
+								"4477,4478": "'ActorHUD' does not contain a definition for 'SetHealth'",
+								"740,748": "'ActorHUD' is not a known identifier"
 							},
 							"syntax": "Packages/C#/C#.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 632.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "Assets/Code/Actors/Food.cs",
-					"semi_transient": true,
+					"file": "/I/w/threefish/Assets/Code/SpriteBoss.cs",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1425,
+						"buffer_size": 546,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								777,
-								777
+								496,
+								496
 							]
 						],
 						"settings":
 						{
+							"oops":
+							{
+								"158,165": "'Texture' is not a known identifier",
+								"185,192": "'Texture' is not a known identifier",
+								"213,220": "'Texture' is not a known identifier",
+								"241,248": "'Texture' is not a known identifier",
+								"271,278": "'Texture' is not a known identifier",
+								"296,303": "'Texture' is not a known identifier",
+								"322,329": "'Texture' is not a known identifier",
+								"348,355": "'Texture' is not a known identifier",
+								"377,384": "'Texture' is not a known identifier",
+								"402,409": "'Texture' is not a known identifier",
+								"427,434": "'Texture' is not a known identifier",
+								"452,459": "'Texture' is not a known identifier",
+								"479,486": "'Texture' is not a known identifier",
+								"6,17": "'UnityEngine' is not a known identifier",
+								"94,107": "'MonoBehaviour' is not a known identifier"
+							},
 							"syntax": "Packages/C#/C#.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 90.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -1139,15 +1190,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6879,
+						"buffer_size": 6818,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1550,
-								1550
+								4572,
+								4578
 							]
 						],
 						"settings":
@@ -1155,28 +1206,93 @@
 							"history_list_is_closing": true,
 							"oops":
 							{
-								"1599,1604": "'other' is not a known identifier",
-								"1605,1614": "'?' does not contain a definition for 'transform'",
-								"1615,1623": "'?' does not contain a definition for 'position'",
-								"1626,1632": "Cannot convert from System.Int32 to UnityEngine.Vector3"
+								"1111,1115": "'this.' is redundant and can be removed safely.",
+								"1598,1602": "'this.' is redundant and can be removed safely.",
+								"1684,1685": "Parameter can be Nullable",
+								"1694,1695": "Parameter can be Nullable",
+								"1704,1705": "Parameter can be Nullable",
+								"1938,1942": "'this.' is redundant and can be removed safely.",
+								"199,204": "Name should have prefix '_'. (Rule 'Fields').",
+								"228,236": "Name should have prefix '_'. (Rule 'Fields').",
+								"259,276": "Name should have prefix '_'. (Rule 'Fields').",
+								"299,307": "Name should have prefix '_'. (Rule 'Fields').",
+								"332,341": "Convert to constant",
+								"372,389": "Convert to constant",
+								"38,43": "Using directive is not used by code and can be removed safely.",
+								"4059,4063": "'this.' is redundant and can be removed safely.",
+								"447,449": "Initializing field by default value is redundant",
+								"4689,4691": "Convert to '?:' expression",
+								"4693,4697": "'this.' is redundant and can be removed safely.",
+								"4917,4925": "Convert to constant",
+								"5573,5577": "'this.' is redundant and can be removed safely.",
+								"5686,5692": "Convert to constant",
+								"5800,5802": "Convert to 'return' statement",
+								"6422,6426": "'this.' is redundant and can be removed safely.",
+								"6587,6600": "Method 'OnCollideMaxX' has the same with 'OnCollideMinX'",
+								"6638,6651": "Method 'OnCollideMinY' has the same with 'OnCollideMaxX'",
+								"6689,6702": "Method 'OnCollideMaxY' has the same with 'OnCollideMinY'",
+								"6740,6753": "Method 'OnCollideMinZ' has the same with 'OnCollideMaxY'",
+								"6791,6804": "Method 'OnCollideMaxZ' has the same with 'OnCollideMinZ'",
+								"754,767": "Name should have prefix '_'. (Rule 'Fields').",
+								"867,877": "Name should have prefix '_'. (Rule 'Fields').",
+								"880,884": "Initializing field by default value is redundant"
 							},
 							"syntax": "Packages/C#/C#.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 63.0,
-						"translation.y": 604.0,
+						"translation.x": 7.0,
+						"translation.y": 2475.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
+					"file": "Assets/Code/FishCameraControl.cs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2575,
+						"buffer_size": 1715,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								708,
+								752
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"1285,1288": "Parameter can be IComparable",
+								"1379,1383": "Use 'var' keyword",
+								"19,24": "Using directive is not used by code and can be removed safely.",
+								"518,522": "'this.' is redundant and can be removed safely.",
+								"662,666": "'this.' is redundant and can be removed safely.",
+								"744,747": "Parameter can be IComparable",
+								"835,843": "Convert to constant"
+							},
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 247.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7332,
 						"regions":
 						{
 							"match":
@@ -1227,6 +1343,82 @@
 									[
 										2091,
 										2101
+									],
+									[
+										2730,
+										2746
+									],
+									[
+										2924,
+										2940
+									],
+									[
+										3085,
+										3101
+									],
+									[
+										3297,
+										3313
+									],
+									[
+										3549,
+										3565
+									],
+									[
+										3711,
+										3727
+									],
+									[
+										3947,
+										3955
+									],
+									[
+										4255,
+										4263
+									],
+									[
+										4667,
+										4675
+									],
+									[
+										5081,
+										5089
+									],
+									[
+										5494,
+										5503
+									],
+									[
+										5783,
+										5800
+									],
+									[
+										5999,
+										6016
+									],
+									[
+										6332,
+										6350
+									],
+									[
+										6486,
+										6504
+									],
+									[
+										6714,
+										6732
+									],
+									[
+										6812,
+										6830
+									],
+									[
+										7090,
+										7108
+									],
+									[
+										7188,
+										7206
 									]
 								],
 								"scope": ""
@@ -1235,15 +1427,15 @@
 						"selection":
 						[
 							[
-								1879,
-								1879
+								6197,
+								6197
 							]
 						],
 						"settings":
 						{
 							"detect_indentation": false,
 							"line_numbers": false,
-							"output_tag": 4,
+							"output_tag": 10,
 							"result_base_dir": "",
 							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
 							"result_line_regex": "^ +([0-9]+):",
@@ -1251,114 +1443,172 @@
 							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 975.0,
+						"translation.y": 3765.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "Assets/Code/Actors/Boat.cs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1558,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								115,
-								115
-							]
-						],
-						"settings":
-						{
-							"oops":
-							{
-								"717,726": "'ActorType' is not a known identifier",
-								"727,731": "'?' does not contain a definition for 'HOOK'"
-							},
-							"syntax": "Packages/C#/C#.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 90.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "Assets/Code/User.cs",
+					"file": "Assets/Code/World.cs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2443,
+						"buffer_size": 1889,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1663,
-								1663
+								467,
+								467
 							]
 						],
 						"settings":
 						{
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 9.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Assets/Code/User.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3150,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2127,
+								2127
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
 							"oops":
 							{
-								"217,226": "'ActorType' is not a known identifier",
-								"250,259": "'ActorType' is not a known identifier",
-								"262,263": "Cannot convert from System.Collections.Generic.List`1[[?]] to System.Collections.Generic.List`1[[?]]",
-								"632,641": "'ActorType' is not a known identifier"
+								"140,154": "Name should have prefix '_'. (Rule 'Fields').",
+								"157,162": "Initializing field by default value is redundant",
+								"184,188": "Name should have prefix '_'. (Rule 'Fields').",
+								"228,238": "Name should have prefix '_'. (Rule 'Fields').",
+								"283,290": "Name should have prefix '_'. (Rule 'Fields').",
+								"3102,3109": "Redundant empty 'default' switch branch",
+								"320,326": "Name should have prefix '_'. (Rule 'Fields').",
+								"347,352": "Name should have prefix '_'. (Rule 'Fields').",
+								"377,389": "Name should have prefix '_'. (Rule 'Fields').",
+								"414,424": "Name should have prefix '_'. (Rule 'Fields')."
 							},
 							"syntax": "Packages/C#/C#.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 630.0,
+						"translation.y": 780.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "Assets/Code/SpawnBoss.cs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2649,
+						"buffer_size": 2731,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2392,
-								2399
+								826,
+								826
 							]
 						],
 						"settings":
 						{
+							"oops":
+							{
+								"1111,1115": "Redundant case label",
+								"1137,1141": "Redundant case label",
+								"1269,1279": "Static method invoked via derived type",
+								"1372,1373": "Redundant ToString() call",
+								"1416,1420": "'this.' is redundant and can be removed safely.",
+								"171,179": "'Instance' should start with a lower case letter. (Rule 'Fields')",
+								"19,24": "Using directive is not used by code and can be removed safely.",
+								"207,217": "Name should have prefix '_'. (Rule 'Fields').",
+								"2112,2119": "Use 'var' keyword",
+								"2318,2328": "'System.String.StartsWith' is culture-aware and missing a StringComparison argument",
+								"2642,2646": "'this.' is redundant and can be removed safely.",
+								"295,309": "Name should have prefix '_'. (Rule 'Fields').",
+								"403,412": "Use 'var' keyword",
+								"693,697": "'this.' is redundant and can be removed safely.",
+								"824,825": "Assignment is redundant"
+							},
 							"syntax": "Packages/C#/C#.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 1177.0,
+						"translation.x": 59.0,
+						"translation.y": 209.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
+					"file": "Assets/Code/Utils.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1708,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								315,
+								295
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"0,5": "Using directive is not used by code and can be removed safely.",
+								"1586,1588": "Convert to 'return' statement",
+								"19,24": "Using directive is not used by code and can be removed safely.",
+								"354,359": "This class is recommended to be defined as static"
+							},
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
 					"file": "Assets/CodeLib/BasicCommon/BasicTimer.cs",
 					"semi_transient": false,
 					"settings":
@@ -1384,30 +1634,110 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 18,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 2,
+			"selected": 7,
 			"sheets":
 			[
 				{
-					"buffer": 0,
-					"file": "Assets/Code/Actors/Actor.cs",
+					"buffer": 10,
+					"file": "Assets/Code/Actors/Boat.cs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3698,
+						"buffer_size": 1634,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1106,
-								1116
+								1283,
+								1283
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"1034,1038": "'this.' is redundant and can be removed safely.",
+								"1067,1071": "'this.' is redundant and can be removed safely.",
+								"130,134": "Name should have prefix '_'. (Rule 'Fields').",
+								"150,157": "Name should have prefix '_'. (Rule 'Fields').",
+								"160,165": "Initializing field by default value is redundant",
+								"189,202": "Convert to readonly",
+								"278,290": "Name should have prefix '_'. (Rule 'Fields').",
+								"38,43": "Using directive is not used by code and can be removed safely.",
+								"820,824": "'this.' is redundant and can be removed safely.",
+								"847,851": "'this.' is redundant and can be removed safely.",
+								"879,883": "'this.' is redundant and can be removed safely."
+							},
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 419.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "Assets/Code/Utils.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1708,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								220,
+								220
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"0,5": "Using directive is not used by code and can be removed safely.",
+								"1586,1588": "Convert to 'return' statement",
+								"19,24": "Using directive is not used by code and can be removed safely.",
+								"354,359": "This class is recommended to be defined as static"
+							},
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 0,
+					"file": "Assets/Code/Actors/Actor.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4770,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4770,
+								4770
 							]
 						],
 						"settings":
@@ -1423,35 +1753,36 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 199.0,
+						"translation.y": 2744.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 11,
 					"file": "Assets/Code/Actors/Hook.cs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 129,
+						"buffer_size": 418,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								109,
-								109
+								63,
+								63
 							]
 						],
 						"settings":
 						{
 							"oops":
 							{
-								"0,5": "Using directive is not used by code and can be removed safely.",
+								"137,142": "Name should have prefix '_'. (Rule 'Fields').",
 								"19,24": "Using directive is not used by code and can be removed safely.",
+								"222,226": "'this.' is redundant and can be removed safely.",
 								"38,43": "Using directive is not used by code and can be removed safely."
 							},
 							"syntax": "Packages/C#/C#.tmLanguage",
@@ -1461,11 +1792,93 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 6,
+					"file": "Assets/Code/User.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3150,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1080,
+								1080
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"oops":
+							{
+								"140,154": "Name should have prefix '_'. (Rule 'Fields').",
+								"157,162": "Initializing field by default value is redundant",
+								"184,188": "Name should have prefix '_'. (Rule 'Fields').",
+								"228,238": "Name should have prefix '_'. (Rule 'Fields').",
+								"283,290": "Name should have prefix '_'. (Rule 'Fields').",
+								"3102,3109": "Redundant empty 'default' switch branch",
+								"320,326": "Name should have prefix '_'. (Rule 'Fields').",
+								"347,352": "Name should have prefix '_'. (Rule 'Fields').",
+								"377,389": "Name should have prefix '_'. (Rule 'Fields').",
+								"414,424": "Name should have prefix '_'. (Rule 'Fields')."
+							},
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "Assets/Code/UserManager.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1774,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								938,
+								938
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"176,181": "Name should have prefix '_'. (Rule 'Fields').",
+								"215,216": "Initializing field by default value is redundant",
+								"239,248": "Name should have prefix '_'. (Rule 'Fields').",
+								"381,391": "Use 'var' keyword",
+								"815,823": "Local variable 'nextUser' hides field 'GoodFish.UserManager.nextUser'"
+							},
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 418.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
 					"file": "Assets/Code/Actors/ActorMouth.cs",
 					"semi_transient": false,
 					"settings":
@@ -1499,66 +1912,143 @@
 						"translation.y": 209.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
-					"file": "Assets/Code/Actors/ActorBody.cs",
+					"buffer": 14,
+					"file": "/I/w/threefish/Assets/Code/Actors/ActorHUD.cs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1003,
+						"buffer_size": 3869,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								781,
-								781
+								3805,
+								3805
 							]
 						],
 						"settings":
 						{
 							"oops":
 							{
-								"169,174": "Name should have prefix '_'. (Rule 'Fields').",
-								"19,24": "Using directive is not used by code and can be removed safely.",
-								"199,204": "Name should have prefix '_'. (Rule 'Fields').",
-								"229,241": "Name should have prefix '_'. (Rule 'Fields').",
-								"281,293": "Name should have prefix '_'. (Rule 'Fields').",
-								"319,332": "Name should have prefix '_'. (Rule 'Fields').",
-								"435,439": "'this.' is redundant and can be removed safely.",
-								"613,618": "Parameter can be IComparable",
-								"821,824": "Parameter can be IComparable"
+								"1007,1015": "'?' does not contain a definition for 'material'",
+								"1016,1017": "Cannot convert from ? to [UnknownType Material]",
+								"1045,1053": "'?' does not contain a definition for 'material'",
+								"1056,1070": "Cannot convert from [UnknownType Material] to ?",
+								"1091,1105": "'Actor' does not contain a definition for 'OnFacingChange'",
+								"1109,1127": "Error: Int32",
+								"130,143": "'MonoBehaviour' is not a known identifier",
+								"1433,1444": "'Material' does not contain a definition for 'mainTexture'",
+								"1450,1458": "Cannot convert from [UnknownType Texture] to ?",
+								"1594,1605": "'Material' does not contain a definition for 'mainTexture'",
+								"1611,1620": "Cannot convert from [UnknownType Texture] to ?",
+								"165,170": "'Actor' is not a known identifier",
+								"1756,1767": "'Material' does not contain a definition for 'mainTexture'",
+								"1773,1782": "Cannot convert from [UnknownType Texture] to ?",
+								"194,204": "'GameObject' is not a known identifier",
+								"1943,1954": "'Material' does not contain a definition for 'mainTexture'",
+								"1960,1970": "Cannot convert from [UnknownType Texture] to ?",
+								"2215,2226": "'Material' does not contain a definition for 'mainTexture'",
+								"2232,2238": "Cannot convert from [UnknownType Texture] to ?",
+								"229,237": "'Material' is not a known identifier",
+								"2372,2383": "'Material' does not contain a definition for 'mainTexture'",
+								"2389,2396": "Cannot convert from [UnknownType Texture] to ?",
+								"2530,2541": "'Material' does not contain a definition for 'mainTexture'",
+								"2547,2554": "Cannot convert from [UnknownType Texture] to ?",
+								"269,279": "'GameObject' is not a known identifier",
+								"2713,2724": "'Material' does not contain a definition for 'mainTexture'",
+								"2730,2738": "Cannot convert from [UnknownType Texture] to ?",
+								"2987,2998": "'Material' does not contain a definition for 'mainTexture'",
+								"3004,3010": "Cannot convert from [UnknownType Texture] to ?",
+								"302,310": "'Material' is not a known identifier",
+								"3098,3109": "'Material' does not contain a definition for 'mainTexture'",
+								"3115,3121": "Cannot convert from [UnknownType Texture] to ?",
+								"3209,3220": "'Material' does not contain a definition for 'mainTexture'",
+								"3226,3232": "Cannot convert from [UnknownType Texture] to ?",
+								"3320,3331": "'Material' does not contain a definition for 'mainTexture'",
+								"3337,3344": "Cannot convert from [UnknownType Texture] to ?",
+								"340,350": "'GameObject' is not a known identifier",
+								"3457,3468": "'Material' does not contain a definition for 'mainTexture'",
+								"3474,3481": "Cannot convert from [UnknownType Texture] to ?",
+								"3614,3623": "'GameObject' does not contain a definition for 'transform'",
+								"3624,3630": "'?' does not contain a definition for 'Rotate'",
+								"3635,3642": "'Vector3' is not a known identifier",
+								"3656,3657": "'Vector3' is not a known identifier",
+								"3657,3658": "'?' does not contain a definition for 'Rotate'",
+								"3677,3686": "'GameObject' does not contain a definition for 'transform'",
+								"3687,3693": "'?' does not contain a definition for 'Rotate'",
+								"3698,3705": "'Vector3' is not a known identifier",
+								"3719,3720": "'Vector3' is not a known identifier",
+								"3720,3721": "'?' does not contain a definition for 'Rotate'",
+								"374,382": "'Material' is not a known identifier",
+								"3741,3750": "'GameObject' does not contain a definition for 'transform'",
+								"3751,3757": "'?' does not contain a definition for 'Rotate'",
+								"3762,3769": "'Vector3' is not a known identifier",
+								"3783,3784": "'Vector3' is not a known identifier",
+								"3784,3785": "'?' does not contain a definition for 'Rotate'",
+								"3806,3815": "'GameObject' does not contain a definition for 'transform'",
+								"3816,3822": "'?' does not contain a definition for 'Rotate'",
+								"3827,3834": "'Vector3' is not a known identifier",
+								"3848,3849": "'Vector3' is not a known identifier",
+								"3849,3850": "'?' does not contain a definition for 'Rotate'",
+								"413,423": "'GameObject' is not a known identifier",
+								"445,453": "'Material' is not a known identifier",
+								"515,523": "'Renderer' is not a known identifier",
+								"561,569": "'Renderer' is not a known identifier",
+								"570,571": "'GameObject' does not contain a definition for 'GetComponent'",
+								"572,573": "'GameObject' does not contain a definition for 'GetComponent'",
+								"6,17": "'UnityEngine' is not a known identifier",
+								"607,615": "'Material' is not a known identifier",
+								"631,639": "'?' does not contain a definition for 'material'",
+								"640,641": "Cannot convert from ? to [UnknownType Material]",
+								"669,677": "'?' does not contain a definition for 'material'",
+								"680,694": "Cannot convert from [UnknownType Material] to ?",
+								"709,717": "'Renderer' is not a known identifier",
+								"751,759": "'Renderer' is not a known identifier",
+								"760,761": "'GameObject' does not contain a definition for 'GetComponent'",
+								"762,763": "'GameObject' does not contain a definition for 'GetComponent'",
+								"795,803": "'Material' is not a known identifier",
+								"817,825": "'?' does not contain a definition for 'material'",
+								"826,827": "Cannot convert from ? to [UnknownType Material]",
+								"853,861": "'?' does not contain a definition for 'material'",
+								"864,876": "Cannot convert from [UnknownType Material] to ?",
+								"891,899": "'Renderer' is not a known identifier",
+								"937,945": "'Renderer' is not a known identifier",
+								"946,947": "'GameObject' does not contain a definition for 'GetComponent'",
+								"948,949": "'GameObject' does not contain a definition for 'GetComponent'",
+								"983,991": "'Material' is not a known identifier"
 							},
 							"syntax": "Packages/C#/C#.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 1290.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 15,
 					"file": "Assets/Code/Actors/Fish.cs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2360,
+						"buffer_size": 2392,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								406,
-								406
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1566,8 +2056,6 @@
 							"oops":
 							{
 								"151,163": "Convert to constant",
-								"1536,1540": "'this.' is redundant and can be removed safely.",
-								"1609,1613": "'this.' is redundant and can be removed safely.",
 								"1754,1760": "Convert to constant",
 								"227,243": "Convert to constant",
 								"303,309": "Name should have prefix '_'. (Rule 'Fields').",
@@ -1620,7 +2108,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.375185735513,
 			1.0
 		],
 		"rows":
@@ -1656,16 +2144,36 @@
 		"selected_items":
 		[
 			[
+				"acto",
+				"Code\\Actors\\Actor.cs"
+			],
+			[
+				"fish",
+				"Code\\Actors\\Fish.cs"
+			],
+			[
+				"uti",
+				"Code\\Utils.cs"
+			],
+			[
+				"userm",
+				"Code\\UserManager.cs"
+			],
+			[
+				"us",
+				"Code\\User.cs"
+			],
+			[
+				"boa",
+				"Code\\Actors\\Boat.cs"
+			],
+			[
 				"actorb",
 				"Code\\Actors\\ActorBody.cs"
 			],
 			[
 				"actorm",
 				"Code\\Actors\\ActorMotor.cs"
-			],
-			[
-				"fish",
-				"Code\\Actors\\Fish.cs"
 			],
 			[
 				"hook",
@@ -1692,10 +2200,6 @@
 				"Code\\World.cs"
 			],
 			[
-				"userm",
-				"Code\\UserManager.cs"
-			],
-			[
 				"inputb",
 				"Code\\InputBoss.cs"
 			],
@@ -1710,10 +2214,6 @@
 			[
 				"foodm",
 				"Code\\Actors\\FoodModifier.cs"
-			],
-			[
-				"us",
-				"Code\\User.cs"
 			],
 			[
 				"userma",
@@ -1736,10 +2236,6 @@
 				"Code\\World.cs"
 			],
 			[
-				"acto",
-				"Code\\Actors\\Actor.cs"
-			],
-			[
 				"gamec",
 				"Code\\GameControls.cs"
 			],
@@ -1749,10 +2245,6 @@
 			],
 			[
 				"boat",
-				"Code\\Actors\\Boat.cs"
-			],
-			[
-				"boa",
 				"Code\\Actors\\Boat.cs"
 			],
 			[
@@ -2002,10 +2494,6 @@
 			[
 				"fisha",
 				"Code\\Game\\FishActor.cs"
-			],
-			[
-				"uti",
-				"CodeLib\\Common\\Utilities.cs"
 			],
 			[
 				"fis",
