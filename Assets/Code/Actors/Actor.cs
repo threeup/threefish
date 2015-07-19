@@ -30,6 +30,7 @@ namespace GoodFish
 		public ActorMotor motor;
 		public ActorBody body;
 		public ActorHUD hud;
+		public Transform hudBone;
 
 
 		private bool facePositive = true;
@@ -170,12 +171,27 @@ namespace GoodFish
 		public void AfterSpawn()
 		{
 			uid = World.Instance.AddActor(this);
+			if( hud == null && Utils.IsFish(this.actorType) )
+			{
+				hud = GameObject.Instantiate(SpriteBoss.Instance.HUDPrototype).GetComponent<ActorHUD>();
+				hud.transform.SetParent( hudBone, false);
+				hud.actor = this;
+				hud.Init();
+			}
+			if( hud != null )
+			{
+				hud.gameObject.SetActive(true);
+			}
 			Reset();
 		}
 
 		public void AfterDespawn()
 		{
 			World.Instance.RemoveActor(this);
+			if( hud != null )
+			{
+				hud.gameObject.SetActive(false);
+			}
 			if( brain != null )
 			{
 				brain.SetAI(false);
@@ -191,7 +207,7 @@ namespace GoodFish
 			food = Mathf.Min(maxFood, food + val);
 			if( hud != null )
 			{
-				hud.SetFood( (int)Mathf.Round((float)food/maxFood * 10) );
+				//hud.SetFood( (int)Mathf.Round((float)food/maxFood * 10) );
 			}
 		}
 
@@ -200,7 +216,7 @@ namespace GoodFish
 			health = Mathf.Min(maxHealth, health + val);
 			if( hud != null )
 			{
-				hud.SetHealth( (int)Mathf.Round((float)health/maxHealth * 10) );
+				//hud.SetHealth( (int)Mathf.Round((float)health/maxHealth * 10) );
 			}
 		}
 

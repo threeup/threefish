@@ -7,6 +7,8 @@ namespace GoodFish
 
 		public static SpriteBoss Instance;
 
+		public GameObject HUDPrototype;
+
 		public Texture NoHealth;
 		public Texture LowHealth;
 		public Texture MedHealth;

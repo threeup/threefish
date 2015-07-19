@@ -15,6 +15,7 @@ namespace GumboLib
 		public delegate bool CanEnterDelegate();
 
 		public OnChangeDelegate OnEnter;
+		public OnChangeDelegate OnSame;
 		public OnChangeDelegate OnExit;
 		public CanEnterDelegate CanEnter;
 
@@ -22,6 +23,7 @@ namespace GumboLib
 		{
 			idx = i;
 			OnEnter = null;
+			OnSame = null;
 			OnExit = null;
 			CanEnter = DefaultEnter;
 			enumValue = eVal;
@@ -38,7 +40,8 @@ namespace GumboLib
 			return true;
 		}
 	}
-
+	
+	[System.Serializable]
 	public class BasicMachine<T> where T : struct
 	{
 
@@ -109,6 +112,7 @@ namespace GumboLib
 		{
 			if (nextState == currentState)
 			{
+				if (currentState.OnSame != null) { currentState.OnSame(); }
 				return null;
 			}
 
@@ -136,6 +140,56 @@ namespace GumboLib
 		{
 			if (currentState.OnExit != null) { currentState.OnExit(); }
 			if (currentState.OnEnter != null) { currentState.OnEnter(); }
+		}
+
+		public void AddEnterListener(int state, BasicState.OnChangeDelegate deleg)
+		{
+			if (stateList[state].OnEnter == null)
+			{
+				stateList[state].OnEnter = deleg;
+			}
+			else
+			{
+				stateList[state].OnEnter += deleg;
+			}
+		}
+
+		public void AddSameListener(int state, BasicState.OnChangeDelegate deleg)
+		{
+			if (stateList[state].OnSame == null)
+			{
+				stateList[state].OnSame = deleg;
+			}
+			else
+			{
+				stateList[state].OnSame += deleg;
+			}
+		}
+
+
+		public void AddExitListener(int state, BasicState.OnChangeDelegate deleg)
+		{
+			if (stateList[state].OnExit == null)
+			{
+				stateList[state].OnExit = deleg;
+			}
+			else
+			{
+				stateList[state].OnExit += deleg;
+			}
+		}
+
+		public void AddChangeListener(OnChangeDelegate deleg)
+		{
+			if (OnChange == null)
+			{
+				OnChange = deleg;
+			}
+			else
+			{
+				//OnChange = System.Delegate.Combine(OnChange, deleg) as OnChangeDelegate;
+				OnChange += deleg;
+			}
 		}
 
 		public override string ToString()
