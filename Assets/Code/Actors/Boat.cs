@@ -27,7 +27,10 @@ namespace GoodFish
 			if( verticalAxis < -0.01f && !hasHook && waitHookTimer.Paused )
 			{
 				hook = SpawnBoss.Instance.Spawn(ActorType.HOOK) as Hook;
-				hook.motor.SetPosition(this.transform.position.x, this.transform.position.y - 3f, this.transform.position.z);
+				if( hook != null )
+				{
+					hook.motor.SetPosition(this.transform.position.x, this.transform.position.y - 3f, this.transform.position.z);
+				}
 			}	
 			if( hasHook )
 			{

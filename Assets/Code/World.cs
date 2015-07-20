@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Vectrosity;
 
 
 namespace GoodFish
@@ -59,6 +60,7 @@ namespace GoodFish
         	controls.SetModeSurface(true);
         	boatCamera.SetActiveFocus(true, focalActor);
         	fishCamera.SetActiveFocus(false, focalActor);
+            VectorLine.SetCamera3D(boatCamera.thisCamera);
         }
 
         public void GotoWater(Actor focalActor)
@@ -66,6 +68,7 @@ namespace GoodFish
         	controls.SetModeSurface(false);	
         	boatCamera.SetActiveFocus(false, focalActor);
         	fishCamera.SetActiveFocus(true, focalActor);
+            VectorLine.SetCamera3D(fishCamera.thisCamera);
         }
 
         public int AddActor(Actor actor)

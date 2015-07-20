@@ -1,7 +1,7 @@
 using UnityEngine;
 using BasicCommon;
 using System.Collections.Generic;
-
+using Vectrosity;
 
 namespace GoodFish
 {
@@ -11,56 +11,125 @@ namespace GoodFish
         private delegate void TargetDelegate();
         private TargetDelegate Target;
         public Actor actor;
-        public float scanRange = 20;
 
-        private bool hasTarget = false;
-        private bool hasScanned = false;
-        private Transform targetTransform;
-        private Vector3 targetPosition;
-
-        private Dictionary<int, BrainRecord> memory = new Dictionary<int, BrainRecord>();
+        public float innerRange = 10;
+        public float outerRange = 30;
 
         private List<DirectionalData> choice = new List<DirectionalData>();
+        private Dictionary<int, BrainRecord> records = new Dictionary<int, BrainRecord>();
 
         private BasicTimer scanTimer = new BasicTimer(2f);
-        private BasicTimer followTimer = new BasicTimer(2f);
-        private BasicTimer retargetTimer = new BasicTimer(15f);
+        
+        private bool hasTarget = false;
+        private Vector3 worstPosition;
+        private Vector3 bestPosition;
+        private Vector3 targetPosition;
+
+        public Material lineMaterial;
+        private VectorLine worstLine;
+        private VectorLine bestLine;
+        private VectorLine goodSpiderLine;
+        private VectorLine badSpiderLine;
+
+        private bool canScan = true;
+        public BrainBehaviour behaviour;
+
+        private Direction bestDir = Direction.CENTER;
+        private Direction worstDir = Direction.CENTER;
+        private bool preferBest = true;
+
         void Awake()
         {
-            for(int i=0; i<8; ++i)
+            int dirCount = System.Enum.GetValues(typeof(Direction)).Length;
+            for(int i=0; i<dirCount; ++i)
             {
-                choice.Add(new DirectionalData(null));
+                choice.Add(new DirectionalData());
             }
             scanTimer.Randomize();
-            followTimer.Randomize();
-            retargetTimer.Randomize();
-            //Target = TargetBest;
-            Target = TargetFar;
+
+            worstLine = new VectorLine ("BrainAvoid", new Vector3[6], lineMaterial, 2f);
+            worstLine.color = Color.red;
+            bestLine = new VectorLine ("BrainTarget", new Vector3[6], lineMaterial, 2f);
+            bestLine.color = Color.green;
+            badSpiderLine = new VectorLine ("BadSpider", new Vector3[32], lineMaterial, 2f);
+            badSpiderLine.color = Color.red;
+            goodSpiderLine = new VectorLine ("GoodSpider", new Vector3[32], lineMaterial, 2f);
+            goodSpiderLine.color = Color.blue;
         }
+
 
         public void SetAI(bool val)
         {
             AIManager.Instance.Register(this, val);
         }
 
+
         public void MinorTick(float deltaTime)
         {
-
-            if( scanTimer.Tick(deltaTime) )
+            if( scanTimer.Tick(deltaTime) && canScan )
             {
                 Scan();
+                TargetBest();
             }
-            if( hasScanned && retargetTimer.Tick(deltaTime) )
+        }
+
+        void Update()
+        {
+            if( bestDir != Direction.CENTER )
             {
-                Target();
-            }
-            if( followTimer.Tick(deltaTime) )
-            {
-                if ( targetTransform != null )
+                BrainRecord worstRecord = choice[(int)worstDir].worstRecord;
+                if( worstRecord != null )
                 {
-                    targetPosition = targetTransform.position;
+                    worstPosition = worstRecord.position;
                 }
+                else
+                {
+                    worstPosition = actor.transform.position + Utils.GetVector(worstDir)*5f;  
+                }
+                BrainRecord bestRecord = choice[(int)bestDir].bestRecord;
+                if( bestRecord != null )
+                {
+                    bestPosition = bestRecord.position;
+                }
+                else
+                {
+                    bestPosition = actor.transform.position + Utils.GetVector(bestDir)*5f;  
+                }
+                targetPosition = preferBest ? bestPosition : worstPosition;
+                hasTarget = true;
             }
+            if( hasTarget )
+            {
+                worstLine.MakeSpline(new Vector3[]{ worstPosition, this.transform.position }, 2);
+                bestLine.MakeSpline(new Vector3[]{ this.transform.position, bestPosition }, 2);
+                //worstLine.Draw();
+                bestLine.Draw();
+            }
+
+            if( canScan )
+            {
+                List<Vector3> spiders = new List<Vector3>();
+                for(int i=0; i<8; ++i)
+                {
+                    float desire = Mathf.Clamp(choice[i].GoodSum(behaviour), 10f, 100f);
+                    spiders.Add(this.transform.position + Utils.GetVector(i)*desire*0.1f);
+                }
+                spiders.Add(spiders[0]);
+                goodSpiderLine.MakeSpline(spiders.ToArray(), spiders.Count);
+                goodSpiderLine.Draw();
+
+                spiders.Clear();
+                for(int i=0; i<8; ++i)
+                {
+                    float desire = Mathf.Clamp(choice[i].BadSum(behaviour), -100f, -11f);
+                    spiders.Add(this.transform.position - Utils.GetVector(i)*desire*0.1f);
+                }
+                spiders.Add(spiders[0]);
+                badSpiderLine.MakeSpline(spiders.ToArray(), spiders.Count);
+                badSpiderLine.Draw();
+            }
+
+
         }
 
         public void Tick(float deltaTime)
@@ -84,27 +153,62 @@ namespace GoodFish
             Vector3 forward = actor.Forward;
             Vector3 diff = target - actor.transform.position;
 
-			bool wrongWay = Mathf.Sign(actor.Forward.z) != Mathf.Sign(diff.z);
-			
-			if( wrongWay )
-			{
-				horizontalAxis = 1f;
-			}
-			else
-			{
-				shouldSwim = diff.sqrMagnitude > 1;
-				Vector3 desiredForward = diff.normalized;
-				//float angle = Vector3.Angle(forward, desiredForward);
-				float diffY = desiredForward.y - forward.y;
-				verticalAxis = diffY;
-			}
+            bool wrongWay = Mathf.Sign(actor.Forward.z) != Mathf.Sign(diff.z);
+            
+            if( wrongWay )
+            {
+                horizontalAxis = 1f;
+            }
+            else
+            {
+                shouldSwim = diff.sqrMagnitude > 1;
+                Vector3 desiredForward = diff.normalized;
+                //float angle = Vector3.Angle(forward, desiredForward);
+                float diffY = desiredForward.y - forward.y;
+                verticalAxis = diffY;
+            }
 
             
             actor.HandleInput(deltaTime, horizontalAxis, verticalAxis, shouldSwim, false);
         }
 
-        public void Scan()
+        private void Scan()
         {
+            Vector3 actorPos = actor.transform.position;
+            Vector3 facing = actor.Forward;
+            Bounds liveable = World.Instance.GetLiveableArea(actor.liveableArea);
+            for(int i=0; i<choice.Count; ++i)
+            {
+                Direction dir = (Direction)i;
+                Vector3 dirVector = Utils.GetVector(dir);
+                float dotp = Vector3.Dot(facing, dirVector);
+                DirectionalData dirData = choice[i];
+                dirData.Clear();
+                if( dotp > 0.8 )
+                {
+                    dirData.straight = 10;
+                }
+                else if( dotp > 0.6)
+                {
+                    dirData.straight = 6;
+                }
+                else
+                {
+                    dirData.straight = 0;
+                }
+                dirData.eastWest = EastWestDesire(dir);
+                if( dir == Direction.CENTER )
+                {
+                    //temp
+                    dirData.wall = -10;
+                }
+                else
+                {
+                    dirData.wall = WallDesire(dir, actorPos, liveable);
+                }
+                choice[i] = dirData;
+            }
+
             List<Actor> actors = World.Instance.allActors;
             for(int i=0; i<actors.Count; ++i)
             {
@@ -114,90 +218,69 @@ namespace GoodFish
                     continue;
                 }
                 float range = Range(actor, other);
-                if( !memory.ContainsKey(other.uid) )
+
+                BrainRecord record = null;
+                if( records.ContainsKey(other.uid) )
                 {
-                    memory[other.uid] = new BrainRecord(other);
+                    record = records[other.uid];
                 }
-                BrainRecord record = memory[other.uid];
+                else
+                {
+                    record = new BrainRecord(other.uid);
+                    records.Add(other.uid, record);
+                }
+
+                Direction dir = Direction.CENTER;
+                if( range > 3 )
+                {
+                    dir = Utils.GetDirection(actor, other);
+                }
+                int d = (int)dir;
+                DirectionalData dirData = choice[d];
                 record.position = other.transform.position;
                 record.age = 0;
                 record.range = range;
-                int desire = WeightDesire(actor, other) * RangeDesire(range, scanRange);
-                record.desire = desire;
-
-                int dir = Direction(actor, other);
-                DirectionalData dirData = choice[dir];
-                if( dirData.bestRecord == null)
+                record.fear = FearDesire(actor, other);
+                record.friend = FriendDesire(actor, other);
+                record.food = FoodDesire(actor, other);
+                dirData.fear = Mathf.Max(dirData.fear + record.fear, -10f);
+                dirData.friend = Mathf.Min(dirData.friend + record.friend, 10f);
+                dirData.food = Mathf.Min(dirData.food + record.food, 10f);
+                if( record.WorseThan(dirData.worstRecord, behaviour) )
+                {
+                    dirData.worstRecord = record;
+                }
+                if( record.BetterThan(dirData.bestRecord, behaviour) )
                 {
                     dirData.bestRecord = record;
+
                 }
-                else if ( dirData.bestRecord.desire < desire )
+                
+                choice[d] = dirData;
+            }
+        }
+
+        void TargetBest()
+        {
+            float bestDesire = -99999;
+            bestDir = Direction.CENTER;
+            float worstDesire = 99999;
+            worstDir = Direction.CENTER;
+            for(int i=0; i<8; ++i)
+            {
+                float desire = choice[i].TotalSum(behaviour);
+                if( desire > bestDesire )
                 {
-                    dirData.bestRecord = record;
+                    bestDesire = desire;
+                    bestDir = (Direction)i;
                 }
-                dirData.desireSum += desire;
-                choice[dir] = dirData;
+                if( desire < worstDesire )
+                {
+                    worstDesire = desire;
+                    worstDir = (Direction)i;
+                }
             }
-            hasScanned = true;
-        }
-
-        public static Vector3 GetVector(int dir)
-        {
-            switch(dir)
-            {
-                case 0: return new Vector3(0,-1,0);
-                case 1: return new Vector3(0,-1,1);
-                case 2: return new Vector3(0,0,1);
-                case 3: return new Vector3(0,1,1);
-                case 4: return new Vector3(0,1,0);
-                case 5: return new Vector3(0,1,-1);
-                case 6: return new Vector3(0,0,-1);
-                case 7: return new Vector3(0,-1,-1);
-
-            }
-            return Vector3.zero;
-        }
-
-        public void SetTargetRecord(BrainRecord record, int dir)
-        {
-            Vector3 generalTarget = actor.transform.position + GetVector(dir)*10f;
-			if( record == null )
-			{
-				targetPosition = generalTarget;
-                Debug.DrawLine(actor.transform.position, generalTarget, Color.green, 4f);
-                return;
-			}
-            if( record.target != null )
-            {
-                targetTransform = record.target.transform;
-            }
-            else
-            {
-                targetTransform = null;
-            }
-            targetPosition = record.position;
-            Debug.DrawLine(actor.transform.position, record.position, Color.magenta, 4f);
-			Debug.DrawLine(actor.transform.position, generalTarget, Color.blue, 4f);
-        }
-
-        public static int Direction(Actor self, Actor other)
-        {
-            Vector3 diff = self.transform.position - other.transform.position;
-            float angle = Vector3.Angle(diff, Vector3.up);
-            if( angle < 0 ) 
-            {
-                angle += 360;
-            }
-            if( angle < 45f) { return 0; }
-            if( angle < 90f) { return 1; }
-            if( angle < 135f) { return 2; }
-            if( angle < 180f) { return 3; }
-            if( angle < 215f) { return 4; }
-            if( angle < 270f) { return 5; }
-            if( angle < 315f) { return 6; }
-            if( angle < 360f) { return 7; }
-            return 0;
-
+            preferBest = Mathf.Abs(bestDesire) > Mathf.Abs(worstDesire); 
         }
 
         public static float Range(Actor self, Actor other)
@@ -205,9 +288,42 @@ namespace GoodFish
             return (self.transform.position - other.transform.position).magnitude;
         }
 
-        public static int WeightDesire(Actor self, Actor other)
+        public static float EastWestDesire(Direction dir)
         {
-            return self.weight - other.weight;
+            return Mathf.Round(Mathf.Abs(Utils.GetVector(dir).z)*10f);
+        }
+
+        public static float WallDesire(Direction dir, Vector3 pos, Bounds liveable)
+        {
+            float wallDistance = Utils.DistanceToBounds(dir, pos, liveable);
+            if( wallDistance < 3f)
+            {
+                return 10f;
+            }
+            else if( wallDistance < 5f)
+            {
+                return 5f;
+            }
+            else if( wallDistance < 8f)
+            {
+                return 2f;
+            }
+            return 0f;
+        }                
+
+        public static float FearDesire(Actor self, Actor other)
+        {
+            return (other.weight - self.weight) > 2 ? 6f : 0f;
+        }
+
+        public static float FriendDesire(Actor self, Actor other)
+        {
+            return self.actorType == other.actorType ? 4f : 0f;
+        }
+
+        public static float FoodDesire(Actor self, Actor other)
+        {
+            return (self.weight - other.weight) > 2 ? 6f : 0f;
         }
 
         public static int RangeDesire(float range, float scanRange)
@@ -227,63 +343,6 @@ namespace GoodFish
             return 0;
         }
 
-
-        public void TargetBest()
-        {
-            BrainRecord bestRecord = null;
-            int bestDesire = 0;
-            int worstDesire = 0;
-            int bestDir = -1;
-            //int worstDir = -1;
-            for(int i=0; i<8; ++i)
-            {
-                if( choice[i].desireSum > bestDesire )
-                {
-                    bestDesire = choice[i].desireSum;
-                    bestRecord = choice[i].bestRecord;
-                    bestDir = i;
-                }
-                if( choice[i].desireSum < worstDesire )
-                {
-                    worstDesire = choice[i].desireSum;
-                    //worstDir = i;
-                }
-            }
-            /*if( bestDir == -1 )
-            {
-                bestDir = ( worstDir + 4 ) % 8;
-            }*/
-            if( bestDir != -1 )
-            {
-                SetTargetRecord(bestRecord, bestDir);
-                hasTarget = true;
-            }
-            else
-            {
-                TargetFar();
-            }
-            
-            
-        }
-
-        public void TargetFar()
-        {
-            targetTransform = null;
-            //Vector3 selfPos = actor.transform.position;
-
-            Bounds liveable = World.Instance.GetLiveableArea(actor.liveableArea);
-
-            if( actor.transform.position.z < 0 )
-            {
-                targetPosition = new Vector3(0, Random.Range(liveable.max.y+5, liveable.min.y-5), liveable.max.z);
-            }
-            else
-            {
-                targetPosition = new Vector3(0, Random.Range(liveable.max.y+5, liveable.min.y-5), liveable.min.z);
-            }
-            hasTarget = true;
-            
-        }
-
+        
     }
 }

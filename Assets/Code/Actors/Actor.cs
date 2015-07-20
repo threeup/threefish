@@ -133,7 +133,7 @@ namespace GoodFish
 			{
 				return;
 			}
-			if( weight > other.weight )
+			if( weight - other.weight > 2 )
 			{
 				Attach(other, offset);
 			}
