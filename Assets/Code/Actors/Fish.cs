@@ -48,6 +48,7 @@ namespace GoodFish
 
 
 
+
 		public override void FreeInput(float deltaTime, float horizontalAxis, float verticalAxis, bool btnA, bool btnX)
 		{
 			if( btnA && !isSwimming && energy > 0 )
@@ -112,6 +113,21 @@ namespace GoodFish
 			}
 			ModifyFood(caughtWeight);
 			base.Consume(other);
+		}
+
+		public override bool HasHighEnergy()
+		{
+			return energy > (maxEnergy*2/3);
+		}
+
+		public override bool HasLowEnergy()
+		{
+			return energy > (maxEnergy*1/3);
+		}
+
+		public override bool HasEnergy()
+		{
+			return energy > 0;
 		}
 	}
 

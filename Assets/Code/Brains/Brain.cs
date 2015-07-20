@@ -32,11 +32,14 @@ namespace GoodFish
         private VectorLine badSpiderLine;
 
         private bool canScan = true;
+        private bool canDraw = false;
         public BrainBehaviour behaviour;
 
         private Direction bestDir = Direction.CENTER;
         private Direction worstDir = Direction.CENTER;
         private bool preferBest = true;
+
+        private bool shouldSwim = false;
 
         void Awake()
         {
@@ -98,7 +101,7 @@ namespace GoodFish
                 targetPosition = preferBest ? bestPosition : worstPosition;
                 hasTarget = true;
             }
-            if( hasTarget )
+            if( canDraw && hasTarget )
             {
                 worstLine.MakeSpline(new Vector3[]{ worstPosition, this.transform.position }, 2);
                 bestLine.MakeSpline(new Vector3[]{ this.transform.position, bestPosition }, 2);
@@ -106,7 +109,7 @@ namespace GoodFish
                 bestLine.Draw();
             }
 
-            if( canScan )
+            if( canDraw )
             {
                 List<Vector3> spiders = new List<Vector3>();
                 for(int i=0; i<8; ++i)
@@ -140,10 +143,17 @@ namespace GoodFish
             }
             float horizontalAxis = 0;
             float verticalAxis = 0;
-            bool shouldSwim = false;
+
+            if( shouldSwim )
+            {
+                shouldSwim = actor.HasLowEnergy();
+            }
+            else
+            {
+                shouldSwim = actor.HasHighEnergy();
+            }
             if( !hasTarget )
             {
-                shouldSwim = Random.Range(0, 10) > 2;
                 verticalAxis = Random.Range(-1f, 1f);
                 verticalAxis *= Mathf.Abs(verticalAxis);
                 actor.HandleInput(deltaTime, horizontalAxis, verticalAxis, shouldSwim, false);
@@ -161,7 +171,6 @@ namespace GoodFish
             }
             else
             {
-                shouldSwim = diff.sqrMagnitude > 1;
                 Vector3 desiredForward = diff.normalized;
                 //float angle = Vector3.Angle(forward, desiredForward);
                 float diffY = desiredForward.y - forward.y;
@@ -213,7 +222,7 @@ namespace GoodFish
             for(int i=0; i<actors.Count; ++i)
             {
                 Actor other = actors[i];
-                if( other == actor )
+                if( other == actor || !other.IsAlive )
                 {
                     continue;
                 }
@@ -313,7 +322,7 @@ namespace GoodFish
 
         public static float FearDesire(Actor self, Actor other)
         {
-            return (other.weight - self.weight) > 2 ? 6f : 0f;
+            return other.CanEat(self) ? 6f : 0f;
         }
 
         public static float FriendDesire(Actor self, Actor other)
@@ -323,7 +332,7 @@ namespace GoodFish
 
         public static float FoodDesire(Actor self, Actor other)
         {
-            return (self.weight - other.weight) > 2 ? 6f : 0f;
+            return self.CanEat(other) ? 6f : 0f;
         }
 
         public static int RangeDesire(float range, float scanRange)

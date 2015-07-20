@@ -13,6 +13,8 @@ namespace GoodFish
 		public int uid = -1;
 
 		public int weight = 1;
+		public int eatWeightMin = 1;
+		public int eatWeightMax = 1;
 		public int food = 10;
 		public int maxFood = 10;
 		public int health = 10;
@@ -133,10 +135,15 @@ namespace GoodFish
 			{
 				return;
 			}
-			if( weight - other.weight > 2 )
+			if( CanEat(other) )
 			{
 				Attach(other, offset);
 			}
+		}
+
+		public bool CanEat(Actor other)
+		{
+			return other.weight >= eatWeightMin && other.weight <= eatWeightMax;
 		}
 
 		public virtual void Attach(Actor other, float offset)
@@ -235,6 +242,20 @@ namespace GoodFish
 			}
 		}
 
+		public virtual bool HasHighEnergy()
+		{
+			return true;
+		}
+
+		public virtual bool HasLowEnergy()
+		{
+			return true;
+		}
+
+		public virtual bool HasEnergy()
+		{
+			return true;
+		}
 		
 	}
 
